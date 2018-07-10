@@ -6,13 +6,17 @@ import { HomeComponent } from './misComponentes/home/home.component';
 import { PageNotFoundComponent } from './misComponentes/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {RUTAS_APP} from "./app.routes";
-import { CarritoComponent } from './misComponentes/carrito/carrito.component'
+import { CarritoComponent } from './misComponentes/carrito/carrito.component';
+import { StatusCarritoComponent } from './misComponentes/AppComponents/status-carrito/status-carrito.component';
+import { PerfilUsuarioComponent } from './misComponentes/AppComponents/perfil-usuario/perfil-usuario.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    CarritoComponent
+    CarritoComponent,
+    StatusCarritoComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
