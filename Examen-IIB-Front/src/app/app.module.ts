@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './misComponentes/home/home.component';
 import { PageNotFoundComponent } from './misComponentes/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
-import {RUTAS_APP} from "./app.routes"
+import {RUTAS_APP} from "./app.routes";
+import { CarritoComponent } from './misComponentes/carrito/carrito.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
