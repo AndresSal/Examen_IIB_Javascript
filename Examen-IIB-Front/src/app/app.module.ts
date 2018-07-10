@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './misComponentes/home/home.component';
+import { PageNotFoundComponent } from './misComponentes/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule
