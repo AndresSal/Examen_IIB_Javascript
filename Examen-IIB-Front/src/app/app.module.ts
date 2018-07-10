@@ -8,7 +8,11 @@ import {RouterModule} from "@angular/router";
 import {RUTAS_APP} from "./app.routes";
 import { CarritoComponent } from './misComponentes/carrito/carrito.component';
 import { StatusCarritoComponent } from './misComponentes/AppComponents/status-carrito/status-carrito.component';
-import { PerfilUsuarioComponent } from './misComponentes/AppComponents/perfil-usuario/perfil-usuario.component'
+import { PerfilUsuarioComponent } from './misComponentes/AppComponents/perfil-usuario/perfil-usuario.component';
+import { BuscadorComponent } from './misComponentes/HomeComponents/buscador/buscador.component';
+import { PreviewPadreComponent } from './misComponentes/HomeComponents/preview-padre/preview-padre.component';
+import { PreviewHijoComponent } from './misComponentes/HomeComponents/preview-hijo/preview-hijo.component';
+import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/cargar-mas.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,11 @@ import { PerfilUsuarioComponent } from './misComponentes/AppComponents/perfil-us
     PageNotFoundComponent,
     CarritoComponent,
     StatusCarritoComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    BuscadorComponent,
+    PreviewPadreComponent,
+    PreviewHijoComponent,
+    CargarMasComponent
   ],
   imports: [
     BrowserModule,
