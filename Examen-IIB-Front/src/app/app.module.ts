@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './misComponentes/home/home.component';
 import { PageNotFoundComponent } from './misComponentes/page-not-found/page-not-found.component';
-
+import {RouterModule} from "@angular/router";
+import {RUTAS_APP} from "./app.routes"
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +13,13 @@ import { PageNotFoundComponent } from './misComponentes/page-not-found/page-not-
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      RUTAS_APP,
+      {
+        useHash: true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
