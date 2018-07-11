@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { PreviewPadreComponent } from './misComponentes/HomeComponents/preview-p
 import { PreviewHijoComponent } from './misComponentes/HomeComponents/preview-hijo/preview-hijo.component';
 import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/cargar-mas.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ButtonModule} from "primeng/button";
+import {InputTextModule} from "primeng/primeng";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +33,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       RUTAS_APP,
       {
         useHash: true
       }
     ),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ButtonModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
