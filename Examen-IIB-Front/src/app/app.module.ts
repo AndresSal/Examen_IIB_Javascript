@@ -18,6 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
 import {CarouselModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
+import {MatButtonModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {CardModule} from "primeng/card";
     ButtonModule,
     InputTextModule,
     CardModule,
-    CarouselModule
+    CarouselModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
