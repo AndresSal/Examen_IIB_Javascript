@@ -16,11 +16,12 @@ import { PreviewHijoComponent } from './misComponentes/HomeComponents/preview-hi
 import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/cargar-mas.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
-import {CarouselModule, InputTextModule} from "primeng/primeng";
+import {CarouselModule, DataScrollerModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
 import {MatButtonModule, MatCardModule} from "@angular/material";
 import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
 import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
+import {DataViewModule} from "primeng/dataview";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detall
     CardModule,
     CarouselModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    DataViewModule,
+    DataScrollerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

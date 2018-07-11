@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1637ae3e-338a-484c-b67c-fe4dc28cb144" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-hijo/preview-hijo.component.html" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-hijo/preview-hijo.component.html" />
-      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-estudiante/detalle-estudiante.component.html" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-estudiante/detalle-estudiante.component.html" />
+      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-materia/detalle-materia.component.html" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-materia/detalle-materia.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,25 +17,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="detalle-estudiante.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detalle-materia.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-materia/detalle-materia.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detalle-estudiante.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-estudiante/detalle-estudiante.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
+            <state relative-caret-position="357">
               <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preview-hijo.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-hijo/preview-hijo.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -63,9 +62,10 @@
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-padre/preview-padre.component.html" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-padre/preview-padre.component.ts" />
-        <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-hijo/preview-hijo.component.html" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-estudiante/detalle-estudiante.component.html" />
+        <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-materia/detalle-materia.component.html" />
       </list>
     </option>
   </component>
@@ -140,7 +140,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="detalle-estudiante" type="462c0819:PsiDirectoryNode" />
+              <item name="detalle-materia" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
@@ -150,26 +150,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
               <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Examen_IIB_Javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="Examen-IIB-Front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
-              <item name="preview-hijo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Examen_IIB_Javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="Examen-IIB-Front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
-              <item name="preview-padre" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,12 +191,12 @@
       <option name="presentableId" value="Default" />
       <updated>1531259635420</updated>
       <workItem from="1531259636889" duration="8610000" />
-      <workItem from="1531312158442" duration="8170000" />
+      <workItem from="1531312158442" duration="9180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16780000" />
+    <option name="totallyTimeSpent" value="17790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="3" width="1382" height="744" extended-state="0" />
@@ -267,7 +247,7 @@
         <state relative-caret-position="561">
           <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
-            <element signature="e#0#58#0" expanded="false" />
+            <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -310,6 +290,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -420,14 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/preview-hijo/preview-hijo.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -436,14 +409,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-estudiante/detalle-estudiante.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
+        <state relative-caret-position="357">
           <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/detalle-materia/detalle-materia.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
