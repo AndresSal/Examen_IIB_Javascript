@@ -19,6 +19,8 @@ import {ButtonModule} from "primeng/button";
 import {CarouselModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
 import {MatButtonModule} from "@angular/material";
+import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
+import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {MatButtonModule} from "@angular/material";
     BuscadorComponent,
     PreviewPadreComponent,
     PreviewHijoComponent,
-    CargarMasComponent
+    CargarMasComponent,
+    DetalleEstudianteComponent,
+    DetalleMateriaComponent
   ],
   imports: [
     BrowserModule,

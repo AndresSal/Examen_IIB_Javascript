@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1637ae3e-338a-484c-b67c-fe4dc28cb144" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/cargar-mas/cargar-mas.component.html" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/cargar-mas/cargar-mas.component.html" />
-      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/home/home.component.html" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/home/home.component.html" />
+      <change beforePath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts" afterPath="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,15 +29,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="204">
+              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.routes.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,7 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/index.html" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.component.html" />
@@ -66,6 +74,7 @@
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/HomeComponents/cargar-mas/cargar-mas.component.html" />
         <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/home/home.component.html" />
+        <option value="$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts" />
       </list>
     </option>
   </component>
@@ -78,9 +87,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/Examen-IIB-Front/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-13" />
+    <option name="y" value="3" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -133,34 +142,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Examen_IIB_Javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="Examen-IIB-Front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Examen_IIB_Javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="Examen-IIB-Front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Examen_IIB_Javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Examen_IIB_Javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="Examen-IIB-Front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="misComponentes" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
-              <item name="cargar-mas" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -201,15 +182,15 @@
       <option name="presentableId" value="Default" />
       <updated>1531259635420</updated>
       <workItem from="1531259636889" duration="8610000" />
-      <workItem from="1531312158442" duration="4542000" />
+      <workItem from="1531312158442" duration="5633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13152000" />
+    <option name="totallyTimeSpent" value="14243000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-13" y="3" width="1382" height="744" extended-state="0" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -247,7 +228,7 @@
         <state relative-caret-position="561">
           <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -282,13 +263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="3" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -382,7 +356,7 @@
         <state relative-caret-position="199">
           <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -399,12 +373,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/misComponentes/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="204">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examen-IIB-Front/src/app/app.routes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
