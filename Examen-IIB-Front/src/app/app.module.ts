@@ -22,7 +22,8 @@ import {MatButtonModule, MatCardModule} from "@angular/material";
 import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
 import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
 import {DataViewModule} from "primeng/dataview";
-
+import { VolverInicioComponent } from './misComponentes/AppComponents/volver-inicio/volver-inicio.component';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import {DataViewModule} from "primeng/dataview";
     PreviewHijoComponent,
     CargarMasComponent,
     DetalleEstudianteComponent,
-    DetalleMateriaComponent
+    DetalleMateriaComponent,
+    VolverInicioComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import {DataViewModule} from "primeng/dataview";
     CarouselModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     DataViewModule,
     DataScrollerModule
   ],

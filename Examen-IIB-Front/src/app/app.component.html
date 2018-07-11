@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <h1>Espacio Vacio</h1>
+      <h1>Examen de JS</h1>
     </div>
     <div class="col-sm-6">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <app-volver-inicio></app-volver-inicio>
+        </div>
+        <div class="col-sm-4">
           <app-status-carrito></app-status-carrito>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <app-perfil-usuario></app-perfil-usuario>
         </div>
       </div>
@@ -17,41 +20,9 @@
 </div>
 
 <div class="container">
-  <h1>contenido</h1>
-  <div class="row">
-    <div class="col-sm-6">
-      <ul>
-        <li>
-          <a routerLink="/Home">
-            <h3>Home</h3>
-          </a>
-
-        </li>
-        <li>
-          <a routerLink="/Carrito">
-            <h3>Carrito</h3>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    </div>
-    <div class="col-sm-6">
-      <button
-        class=" btn btn-info"
-        (click)="irAHome()">
-        Home
-      </button>
-
-      <button
-        class=" btn btn-info"
-        (click)="irACarrito()">
-        Carrito
-      </button>
-
-    </div>
+  <br>
     <router-outlet></router-outlet>
-  </div>
+</div>
 <h1>Footer</h1>
 
 

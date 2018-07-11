@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-status-carrito',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusCarritoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
+  irAlCarrito(){
+    const url = ['/Carrito'];
+    this._router.navigate(url);
+  }
   ngOnInit() {
   }
 
