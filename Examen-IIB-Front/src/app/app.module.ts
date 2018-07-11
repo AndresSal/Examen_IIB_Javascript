@@ -17,6 +17,7 @@ import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/c
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/primeng";
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {InputTextModule} from "primeng/primeng";
     ),
     NgbModule.forRoot(),
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
