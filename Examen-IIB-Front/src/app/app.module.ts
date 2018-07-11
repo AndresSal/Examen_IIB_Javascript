@@ -18,7 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
 import {CarouselModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
-import {MatButtonModule} from "@angular/material";
+import {MatButtonModule, MatCardModule} from "@angular/material";
 import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
 import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
 
@@ -51,7 +51,8 @@ import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detall
     InputTextModule,
     CardModule,
     CarouselModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
