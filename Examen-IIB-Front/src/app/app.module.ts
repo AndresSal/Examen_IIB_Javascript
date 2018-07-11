@@ -13,6 +13,7 @@ import { BuscadorComponent } from './misComponentes/HomeComponents/buscador/busc
 import { PreviewPadreComponent } from './misComponentes/HomeComponents/preview-padre/preview-padre.component';
 import { PreviewHijoComponent } from './misComponentes/HomeComponents/preview-hijo/preview-hijo.component';
 import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/cargar-mas.component'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/c
       {
         useHash: true
       }
-    )
+    ),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
