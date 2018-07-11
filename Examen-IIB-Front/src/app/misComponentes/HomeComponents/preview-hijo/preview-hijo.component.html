@@ -1,7 +1,14 @@
 <h1>Modelos del Hijo</h1>
 
-<p-carousel [value]="items">
-  <ng-template let-item pTemplate="item">
-    Content to display
+<p-dataView [value]="cars">
+  <ng-template let-car pTemplate="listItem">
+    <div>
+      {{car.id}}
+    </div>
   </ng-template>
-</p-carousel>
+  <ng-template let-car pTemplate="gridItem">
+    <div class="ui-g-12 ui-md-3">
+      {{car.year}}
+    </div>
+  </ng-template>
+</p-dataView>
