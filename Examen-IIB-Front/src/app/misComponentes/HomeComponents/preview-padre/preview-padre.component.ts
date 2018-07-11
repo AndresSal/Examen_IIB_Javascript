@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-preview-padre',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewPadreComponent implements OnInit {
 
-  constructor() { }
+  id = 10000;
+
+  constructor(private _router:Router) { }
+
+
+  irADescripcionEstudiante (){
+    const url = ['/Estudiante/'+this.id];
+    this._router.navigate(url);
+  }
+
 
   ngOnInit() {
   }
