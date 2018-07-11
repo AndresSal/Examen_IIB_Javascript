@@ -16,7 +16,7 @@ import { PreviewHijoComponent } from './misComponentes/HomeComponents/preview-hi
 import { CargarMasComponent } from './misComponentes/HomeComponents/cargar-mas/cargar-mas.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
-import {InputTextModule} from "primeng/primeng";
+import {CarouselModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
 
 @NgModule({
@@ -44,7 +44,8 @@ import {CardModule} from "primeng/card";
     NgbModule.forRoot(),
     ButtonModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
