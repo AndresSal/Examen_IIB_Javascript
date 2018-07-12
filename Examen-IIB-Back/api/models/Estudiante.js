@@ -1,5 +1,5 @@
 /**
- * Materia.js
+ * Estudiante.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,37 +8,39 @@
 module.exports = {
 
   attributes: {
-    idMateria : {
+    idEstudiante: {
       type: 'number',
-      autoIncrement: true
+      required: true
     },
-    nombreMateria : {
+    nombreEstudiante: {
       type: 'string',
       required: true
     },
-    codigoMateria : {
+    apellidoEstudiante: {
+      type: 'string',
+      required: true
+    },
+    fechaNacimiento: {
       type: 'string',
       required: false
     },
-    descripcionMateria : {
-      type: 'string',
-      required: false
-    },
-    esDisponible : {
+    esGraduado: {
       type: 'boolean',
-      required: true
-    },
-    fechaCreacion : {
-      type: 'string',
       required: false
     },
-    numHorasXSemana : {
+    semestreActual: {
       type: 'number',
       required: false
     },
-    estudianteFK: {
-      model: 'Estudiante'
+    fotoEstudiante: {
+      type: 'string',
+      required: false
+    },
+    materiasEstudiante: {
+      collection: 'Materia',
+      via: 'estudianteFK'
     }
+
   },
 
 };
