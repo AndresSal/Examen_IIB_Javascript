@@ -24,6 +24,7 @@ import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detall
 import {DataViewModule} from "primeng/dataview";
 import { VolverInicioComponent } from './misComponentes/AppComponents/volver-inicio/volver-inicio.component';
 import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import {MatIconModule} from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       RUTAS_APP,

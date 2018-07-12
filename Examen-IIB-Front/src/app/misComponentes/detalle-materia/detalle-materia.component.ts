@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Car} from "../../Car";
 import {MateriaService} from "../../materiaService";
+import {Materia} from "../../Materia";
 
 @Component({
   selector: 'app-detalle-materia',
@@ -9,11 +10,11 @@ import {MateriaService} from "../../materiaService";
 })
 export class DetalleMateriaComponent implements OnInit {
 
-  cars: Car[];
+  listaMaterias: Materia[];
   constructor(private _materiaService: MateriaService) { }
 
   ngOnInit() {
-    this._materiaService.obtenerListaMaterias().then(cars => this.cars = cars);
+    this._materiaService.obtenerListaMaterias().then(materias => this.listaMaterias = materias);
   }
 
 }
