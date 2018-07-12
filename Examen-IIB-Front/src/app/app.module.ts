@@ -25,6 +25,7 @@ import {DataViewModule} from "primeng/dataview";
 import { VolverInicioComponent } from './misComponentes/AppComponents/volver-inicio/volver-inicio.component';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from "@angular/common/http";
+import {GrowlModule} from 'primeng/growl';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatCardModule,
     MatIconModule,
     DataViewModule,
-    DataScrollerModule
+    DataScrollerModule,
+    GrowlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
