@@ -1,10 +1,9 @@
-export class Materia {
-  constructor ( public idMateria?: number,
-                public nombreMateria?: string,
-                public codigoMateria?: string,
-                public descripcionMateria?: string,
-                public fechaCreacion?: Date,
-                public numeroHorasPorSemana?: number,
-                public esDisponible?: boolean,
-                public idEstudiante?: number) {}
+export interface Materia {
+  idMateria: number;
+  nombreMateria: string;
+  codigoMateria: string;
+  descripcionMateria: string;
+  esDisponible: boolean;
+  fechaCreacion: string;
+  numeroHorasXSemana: number;
 }

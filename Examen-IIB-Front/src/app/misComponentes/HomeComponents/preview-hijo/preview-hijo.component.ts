@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Car} from "../../../Car";
 import {MateriaService} from "../../../materiaService";
 import {Materia} from "../../../Materia";
 
@@ -15,7 +14,9 @@ export class PreviewHijoComponent implements OnInit {
   constructor(private _materiaService: MateriaService) { }
 
   ngOnInit() {
-    this._materiaService.obtenerListaMaterias().then(materias => this.materias = materias);
+    console.log('la lista actualmente tiene lo siguiente: '+this.materias);
+    this._materiaService.obtenerMaterias().then(materias => this.materias = materias);
+    console.log('recibi la lista '+this.materias);
   }
 
 }

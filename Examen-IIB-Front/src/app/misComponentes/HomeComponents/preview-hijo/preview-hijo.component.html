@@ -1,14 +1,16 @@
 <h1>Modelos del Hijo</h1>
 
-<p-dataView [value]="cars">
-  <ng-template let-car pTemplate="listItem">
+<p-dataView [value]="materias">
+  <p-header>Lista de materias</p-header>
+  <p-footer>Escoga de la lista</p-footer>
+  <ng-template let-mat pTemplate="listItem">
     <div>
-      {{car.id}}
+      {{mat.nombreMateria}}
     </div>
   </ng-template>
   <ng-template let-car pTemplate="gridItem">
     <div class="ui-g-12 ui-md-3">
-      {{car.year}}
+      {{mat.esDisponible}}
     </div>
   </ng-template>
 </p-dataView>
