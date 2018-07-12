@@ -1,16 +1,21 @@
 <h1>Modelos del Hijo</h1>
 
-<p-dataView [value]="materias">
-  <p-header>Lista de materias</p-header>
-  <p-footer>Escoga de la lista</p-footer>
+<p-dataView #dv [value]="materias" [paginator]="true" [rows]="3">
+  <p-header>
+    Lista de materias
+    <!--<input type="search" pInputText placeholder="Buscar por nombre" (keyup)="dv.filter($event.target.value)">-->
+    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </p-header>
+  <p-footer>Escoga de la lista
+  </p-footer>
   <ng-template let-mat pTemplate="listItem">
     <div>
       {{mat.nombreMateria}}
     </div>
   </ng-template>
-  <ng-template let-car pTemplate="gridItem">
+  <ng-template let-mat pTemplate="gridItem">
     <div class="ui-g-12 ui-md-3">
-      {{mat.esDisponible}}
+      {{mat.codigoMateria}}
     </div>
   </ng-template>
 </p-dataView>
