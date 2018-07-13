@@ -1,8 +1,9 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {Estudiante} from "../../../Estudiante";
 import {Message} from "primeng/api";
 import {EstudianteService} from "../../../estudianteService";
+import {InternalService} from "../../../internalService";
 
 @Component({
   selector: 'app-preview-padre',
@@ -10,55 +11,54 @@ import {EstudianteService} from "../../../estudianteService";
   styleUrls: ['./preview-padre.component.css']
 })
 export class PreviewPadreComponent implements OnInit, OnChanges {
-  id = 10000;
+  id:number;
   msgs: Message[];
-  estudiantes : Estudiante[];
-  // @Input() miArregloDeEstudiantes;
-  miArregloDeEstudiantes = [
+  misEstudiantes : Estudiante[] = [
     {
-      idEstudiante: 1,
-      nombreEstudiante: 'Andres ',
-      apellidoEstudiante: 'Salazar',
-      fechaNacimiento: '17/10/1995',
-      esGraduado: false,
-      semestreActual: 8,
-      misMaterias: [
-      ]
-    },
-    {
-      idEstudiante: 2,
-      nombreEstudiante: 'William ',
-      apellidoEstudiante: 'Rawlins',
-      fechaNacimiento: '07/01/1998',
-      esGraduado: false,
-      semestreActual: 3,
-      misMaterias: [
-      ]
-    },
-    {
-      idEstudiante: 3,
-      nombreEstudiante: 'David',
-      apellidoEstudiante: 'Liberman',
-      fechaNacimiento: '04/08/1990',
-      esGraduado: false,
-      semestreActual: 6,
-      misMaterias: [
-      ]
+      "materiasEstudiante":null,
+      "idEstudiante": 1,
+      "nombreEstudiante": "Andres",
+      "apellidoEstudiante": "Salazar",
+      "fechaNacimiento": "17/10/1995",
+      "esGraduado": false,
+      "semestreActual": 8,
+      "fotoEstudiante": "https://material.angular.io/assets/img/examples/shiba2.jpg"
     },
   ];
+  @Output() deliverIDEstudiante = new EventEmitter();
 
 
-  constructor(private _router:Router, private _estudianteService: EstudianteService) { }
+  constructor(private _router:Router,
+              private _estudianteService: EstudianteService,
+              private _internalService: InternalService) { }
 
   ngOnInit() {
-
-    console.log('la lista (estudiantes) tiene lo siguiente: '+this.estudiantes);
-    this._estudianteService.obtenerListaEstudiantes().then(misEstudiantes => this.estudiantes = misEstudiantes);
-    console.log('recibi la lista '+this.estudiantes);
+    this._estudianteService.verListaEstudiantes();
+    // this.obtenerTodosLosEstudiantes();
+    this.recibirEstudiantes();
   }
 
   ngOnChanges(algoCambio){
     console.log('recibí algo:');
+  }
+
+  // obtenerTodosLosEstudiantes (){
+  //   this._estudianteService.obtenerListaEstudiantes()
+  //     .subscribe(losEstudiantes => this.misEstudiantes = losEstudiantes);
+  // }
+
+  escogerEstudiante(estudiante: Estudiante) {
+    this.id = estudiante.idEstudiante;
+    this._internalService.cargarIdEstudianteEscogido(this.id);
+    this.msgs = [];
+    this.msgs.push({severity: 'info', summary: 'Estudiante Escogido', detail: 'Nombre:' + estudiante.nombreEstudiante});
+    this.irADescripcionEstudiante();
+  }
+
+  recibirEstudiantes(){
+    console.log('la lista actualmente tiene lo siguiente: '+this.misEstudiantes);
+    this._estudianteService.obtenerListaEstudiantes().then(materias => this.misEstudiantes = materias);
+    console.log('recibi la lista '+this.misEstudiantes);
   }
 
   irADescripcionEstudiante (){
@@ -66,18 +66,6 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
     this._router.navigate(url);
   }
 
-
-
-  recibirPaqueteDeEstudiantes ($event){
-    this.miArregloDeEstudiantes = $event;
-    console.log('recibí el arreglo de mi padre');
-    console.log('el arreglo de estudiantes es: ', this.miArregloDeEstudiantes)
-  }
-
-  selectCar(estudiante: Estudiante) {
-    this.msgs = [];
-    this.msgs.push({severity: 'info', summary: 'Estudiante Escogido', detail: 'Nombre:' + estudiante.nombreEstudiante});
-  }
 
 
 }

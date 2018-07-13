@@ -36,10 +36,10 @@ module.exports = {
       type: 'string',
       required: false
     },
-    materiasEstudiante: {
-      collection: 'Materia',
-      via: 'estudianteFK'
-    }
+    // materiasEstudiante: {
+    //   collection: 'Materia',
+    //   via: 'estudianteFK'
+    // }
 
   },
 

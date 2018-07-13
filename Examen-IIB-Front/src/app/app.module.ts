@@ -28,6 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {GrowlModule} from 'primeng/growl';
 import {EstudianteService} from "./estudianteService";
 import {MateriaService} from "./materiaService";
+import {InternalService} from "./internalService";
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import {MateriaService} from "./materiaService";
   ],
   providers: [
     EstudianteService,
-    MateriaService
+    MateriaService,
+    InternalService
   ],
   bootstrap: [AppComponent]
 })
