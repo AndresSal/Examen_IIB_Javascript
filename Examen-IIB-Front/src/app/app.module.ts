@@ -32,6 +32,8 @@ import {InternalService} from "./internalService";
 import { CabeceraFacturacionComponent } from './misComponentes/CarritoComponents/cabecera-facturacion/cabecera-facturacion.component';
 import { DatosCuentaComponent } from './misComponentes/CarritoComponents/datos-cuenta/datos-cuenta.component';
 import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-total/monto-total.component';
+import { DescripcionMateriaEscogidaComponent } from './misComponentes/Shared Components/descripcion-materia-escogida/descripcion-materia-escogida.component';
+import {OrderListModule} from 'primeng/orderlist';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-to
     VolverInicioComponent,
     CabeceraFacturacionComponent,
     DatosCuentaComponent,
-    MontoTotalComponent
+    MontoTotalComponent,
+    DescripcionMateriaEscogidaComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-to
     DataScrollerModule,
     GrowlModule,
     MatListModule,
-    DataScrollerModule
+    DataScrollerModule,
+    OrderListModule
   ],
   providers: [
     EstudianteService,
