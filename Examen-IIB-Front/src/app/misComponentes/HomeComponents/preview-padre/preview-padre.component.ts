@@ -2,6 +2,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Estudiante} from "../../../Estudiante";
 import {Message} from "primeng/api";
+import {EstudianteService} from "../../../estudianteService";
 
 @Component({
   selector: 'app-preview-padre',
@@ -11,6 +12,7 @@ import {Message} from "primeng/api";
 export class PreviewPadreComponent implements OnInit, OnChanges {
   id = 10000;
   msgs: Message[];
+  estudiantes : Estudiante[];
   // @Input() miArregloDeEstudiantes;
   miArregloDeEstudiantes = [
     {
@@ -46,7 +48,14 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
   ];
 
 
-  constructor(private _router:Router) { }
+  constructor(private _router:Router, private _estudianteService: EstudianteService) { }
+
+  ngOnInit() {
+
+    console.log('la lista (estudiantes) tiene lo siguiente: '+this.estudiantes);
+    this._estudianteService.obtenerListaEstudiantes().then(misEstudiantes => this.estudiantes = misEstudiantes);
+    console.log('recibi la lista '+this.estudiantes);
+  }
 
   ngOnChanges(algoCambio){
     console.log('recibí algo:');
@@ -56,6 +65,8 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
     const url = ['/Estudiante/'+this.id];
     this._router.navigate(url);
   }
+
+
 
   recibirPaqueteDeEstudiantes ($event){
     this.miArregloDeEstudiantes = $event;
@@ -68,8 +79,5 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
     this.msgs.push({severity: 'info', summary: 'Estudiante Escogido', detail: 'Nombre:' + estudiante.nombreEstudiante});
   }
 
-
-  ngOnInit() {
-  }
 
 }

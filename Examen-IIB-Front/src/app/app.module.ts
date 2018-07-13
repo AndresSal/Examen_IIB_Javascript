@@ -26,6 +26,8 @@ import { VolverInicioComponent } from './misComponentes/AppComponents/volver-ini
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from "@angular/common/http";
 import {GrowlModule} from 'primeng/growl';
+import {EstudianteService} from "./estudianteService";
+import {MateriaService} from "./materiaService";
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +66,10 @@ import {GrowlModule} from 'primeng/growl';
     DataScrollerModule,
     GrowlModule
   ],
-  providers: [],
+  providers: [
+    EstudianteService,
+    MateriaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

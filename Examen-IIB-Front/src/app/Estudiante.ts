@@ -5,4 +5,6 @@ export interface Estudiante {
   fechaNacimiento: Date;
   esGraduado: boolean;
   semestreActual: number;
+  fotoEstudiante: string;
+  materiasEstudiante: any;
 }
