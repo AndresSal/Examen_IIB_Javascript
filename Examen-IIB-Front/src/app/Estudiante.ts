@@ -21,6 +21,7 @@ export class Estudiante {
     public fechaNacimiento?: string,
     public esGraduado?: boolean,
     public semestreActual?: number,
-    public materiasEstudiante?: Array<any>
+    public materiasEstudiante?: Array<any>,
+    public fotoEstudiante?: string
   ) { }
 }

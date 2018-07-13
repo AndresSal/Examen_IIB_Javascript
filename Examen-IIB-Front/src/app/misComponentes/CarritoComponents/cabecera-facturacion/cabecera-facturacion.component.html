@@ -1,0 +1,23 @@
+<p-dataScroller [value]="estudianteDelDetalle" [rows]="1">
+  <p-header>Detalle de Cabecera de Factura</p-header>
+  <p-footer>Descripción del Estudiante Seleccionado</p-footer>
+  <ng-template let-est pTemplate="item">
+    <div class="ui-g car-item">
+      <div class="ui-g-12 ui-md-9">
+        <div class="ui-g">
+          <div class="ui-g-2 ui-sm-6">Nombre: </div>
+          <div class="ui-g-10 ui-sm-6">{{est.nombreEstudiante}}</div>
+
+          <div class="ui-g-2 ui-sm-6">Apellido: </div>
+          <div class="ui-g-10 ui-sm-6">{{est.apellidoEstudiante}}</div>
+
+          <div class="ui-g-2 ui-sm-6">Fecha de Nacimiento: </div>
+          <div class="ui-g-10 ui-sm-6">{{est.fechaNacimiento}}</div>
+
+          <div class="ui-g-2 ui-sm-6">Semestre Actual: </div>
+          <div class="ui-g-10 ui-sm-6">{{est.semestreActual}}</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataScroller>

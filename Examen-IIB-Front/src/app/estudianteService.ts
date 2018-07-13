@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {Estudiante} from "./Estudiante";
 import {Observable, of} from "rxjs/index";
 import {MessageService} from "./message.service";
@@ -30,34 +30,33 @@ export class EstudianteService{
 
   verListaEstudiantes (){
     return this._http.get(this.listaEstudiantesUrl)
-      .subscribe(data=>
-        console.log(data)
+      .subscribe(response=>
+        console.log('esto responde el servidor: ',response)
       );
   }
 
   obtenerListaEstudiantes() {
-    return this._http.get<any>(this.listaEstudiantesUrl)
+    return this._http.get<Estudiante>(this.listaEstudiantesUrl)
       .toPromise()
-      .then(res => (<Estudiante[]>res))
-      .then(data => { return data; });
+      .then(res => res as Estudiante[]);
   }
 
 
-  // obtenerListaEstudiantes(): Observable<Estudiante[]> {
-  //   return this._http.get<Estudiante[]>(this.listaEstudiantesUrl)
+
+  // consultarEstudianteEspecifico(id:number){
+  //   const URL = `${this.listaEstudiantesUrl}/${id}`;
+  //   return this._http.get<Estudiante>(URL)
   //     .pipe(
-  //       tap(estudiantes => this.log('estudiantes alcanzados')),
-  //       catchError(this.handlerError('getEstudiantes',[]))
+  //       tap( _=> this.log(`estudiante conseguido id=${id}`)),
+  //       catchError(this.handlerError<Estudiante>(`getEstudiante id=${id}`))
   //     );
   // }
 
-  consultarEstudianteEspecifico(id:number):Observable<Estudiante> {
-    const URL = `${this.listaEstudiantesUrl}/${id}`;
-    return this._http.get<Estudiante>(URL)
-      .pipe(
-        tap( _=> this.log(`estudiante conseguido id=${id}`)),
-        catchError(this.handlerError<Estudiante>(`getEstudiante id=${id}`))
-      );
+  consultarEstudianteEspecifico(id:number){
+    return this._http.get<Estudiante>(`${this.listaEstudiantesUrl}/${id}`)
+      .toPromise()
+      .then(res => (<Estudiante[]>res))
+      .then(data => { return data; });
   }
 
 }

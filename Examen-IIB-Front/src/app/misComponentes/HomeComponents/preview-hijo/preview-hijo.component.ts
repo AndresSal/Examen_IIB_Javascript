@@ -22,9 +22,7 @@ export class PreviewHijoComponent implements OnInit {
   }
 
   recibirMaterias(){
-    console.log('la lista actualmente tiene lo siguiente: '+this.materias);
     this._materiaService.obtenerMaterias().then(materias => this.materias = materias);
-    console.log('recibi la lista '+this.materias);
   }
 
   escogerMateria(materia: Materia) {

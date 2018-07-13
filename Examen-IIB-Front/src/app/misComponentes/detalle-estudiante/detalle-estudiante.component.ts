@@ -17,8 +17,9 @@ export class DetalleEstudianteComponent implements OnInit {
               private _internalService:InternalService) { }
 
   ngOnInit() {
+    const observableParametro$ = this.estudianteEscogido;
     this.estudianteService.verListaEstudiantes();
-    this.obtenerMiEstudiante();
+    this.obtenerMiEstudiante(observableParametro$);
   }
 
   obtenerIdDeMiEstudiante(){
@@ -26,11 +27,11 @@ export class DetalleEstudianteComponent implements OnInit {
     console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
   }
 
-  obtenerMiEstudiante () {
+  obtenerMiEstudiante (parametroObservable) {
     this.obtenerIdDeMiEstudiante();
-    this.estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
-      .subscribe(resultadoEstudiante => this.estudianteArray);
-    this.estudianteEscogido = this.estudianteArray[this.idEstudiante];
+    parametroObservable.consultarEstudianteEspecifico(this.idEstudiante)
+      .then(estudiante => this.estudianteEscogido = estudiante);
+
   }
 
 

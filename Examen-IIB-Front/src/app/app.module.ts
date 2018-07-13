@@ -18,7 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
 import {CarouselModule, DataScrollerModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
-import {MatButtonModule, MatCardModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatListModule} from "@angular/material";
 import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
 import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
 import {DataViewModule} from "primeng/dataview";
@@ -29,6 +29,9 @@ import {GrowlModule} from 'primeng/growl';
 import {EstudianteService} from "./estudianteService";
 import {MateriaService} from "./materiaService";
 import {InternalService} from "./internalService";
+import { CabeceraFacturacionComponent } from './misComponentes/CarritoComponents/cabecera-facturacion/cabecera-facturacion.component';
+import { DatosCuentaComponent } from './misComponentes/CarritoComponents/datos-cuenta/datos-cuenta.component';
+import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-total/monto-total.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,10 @@ import {InternalService} from "./internalService";
     CargarMasComponent,
     DetalleEstudianteComponent,
     DetalleMateriaComponent,
-    VolverInicioComponent
+    VolverInicioComponent,
+    CabeceraFacturacionComponent,
+    DatosCuentaComponent,
+    MontoTotalComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +71,9 @@ import {InternalService} from "./internalService";
     MatIconModule,
     DataViewModule,
     DataScrollerModule,
-    GrowlModule
+    GrowlModule,
+    MatListModule,
+    DataScrollerModule
   ],
   providers: [
     EstudianteService,

@@ -12,19 +12,9 @@ import {InternalService} from "../../../internalService";
 })
 export class PreviewPadreComponent implements OnInit, OnChanges {
   id:number;
-  msgs: Message[];
-  misEstudiantes : Estudiante[] = [
-    {
-      "materiasEstudiante":null,
-      "idEstudiante": 1,
-      "nombreEstudiante": "Andres",
-      "apellidoEstudiante": "Salazar",
-      "fechaNacimiento": "17/10/1995",
-      "esGraduado": false,
-      "semestreActual": 8,
-      "fotoEstudiante": "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    },
-  ];
+  errorMessage: string;
+  misEstudiantes : Estudiante[];
+
   @Output() deliverIDEstudiante = new EventEmitter();
 
 
@@ -33,32 +23,32 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
               private _internalService: InternalService) { }
 
   ngOnInit() {
+    console.log('principio');
     this._estudianteService.verListaEstudiantes();
-    // this.obtenerTodosLosEstudiantes();
-    this.recibirEstudiantes();
+    this.obtenerTodosLosEstudiantes();
   }
 
   ngOnChanges(algoCambio){
     console.log('recibí algo:');
   }
 
-  // obtenerTodosLosEstudiantes (){
-  //   this._estudianteService.obtenerListaEstudiantes()
-  //     .subscribe(losEstudiantes => this.misEstudiantes = losEstudiantes);
-  // }
+  obtenerTodosLosEstudiantes (){
+    this._estudianteService.obtenerListaEstudiantes()
+      .then(laLista => {
+        this.misEstudiantes = laLista;
+        if(this.misEstudiantes.length === 0){
+          this.errorMessage = 'no hay registros en el arreglo';
+        }
+    }, error => {
+        console.error('Ha ocurrido un error: '+error);
+      })
+    console.log('mi arreglo: ',this.misEstudiantes);
+  }
 
   escogerEstudiante(estudiante: Estudiante) {
     this.id = estudiante.idEstudiante;
     this._internalService.cargarIdEstudianteEscogido(this.id);
-    this.msgs = [];
-    this.msgs.push({severity: 'info', summary: 'Estudiante Escogido', detail: 'Nombre:' + estudiante.nombreEstudiante});
     this.irADescripcionEstudiante();
-  }
-
-  recibirEstudiantes(){
-    console.log('la lista actualmente tiene lo siguiente: '+this.misEstudiantes);
-    this._estudianteService.obtenerListaEstudiantes().then(materias => this.misEstudiantes = materias);
-    console.log('recibi la lista '+this.misEstudiantes);
   }
 
   irADescripcionEstudiante (){
