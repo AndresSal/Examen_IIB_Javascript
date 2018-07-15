@@ -1,3 +1,5 @@
+import {Materia} from "./Materia";
+
 export interface Estudiante {
   idEstudiante: number;
   nombreEstudiante: string;
@@ -6,7 +8,7 @@ export interface Estudiante {
   esGraduado: boolean;
   semestreActual: number;
   fotoEstudiante: string;
-
+  materiasEstudiante: Materia[];
 }
 
 // export class Estudiante {

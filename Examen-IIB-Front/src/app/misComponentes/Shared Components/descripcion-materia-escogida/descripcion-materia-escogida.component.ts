@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MateriaService} from "../../../materiaService";
+import {Estudiante} from "../../../Estudiante";
 import {Materia} from "../../../Materia";
+import {EstudianteService} from "../../../estudianteService";
+import {InternalService} from "../../../internalService";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-descripcion-materia-escogida',
@@ -9,14 +13,23 @@ import {Materia} from "../../../Materia";
 })
 export class DescripcionMateriaEscogidaComponent implements OnInit {
 
-  miMateriaEscogida: Materia[];
+  materiasDelEstudiante: Materia[];
 
-  constructor(private _materiaService:MateriaService) { }
+  constructor(private _materiaService:MateriaService,
+              private _internalService: InternalService) { }
 
   ngOnInit() {
+    this.consultarListaDeMaterias();
   }
 
-  consultarMateria(){
+
+
+  consultarListaDeMaterias(){
+    this._materiaService.consultarMateriasDeMiEstudiante
+    (this._internalService.retornarEstudianteEscogido().idEstudiante)
+      .subscribe(res =>{
+        this.materiasDelEstudiante = <Materia[]>res;
+      })
 
   }
 }

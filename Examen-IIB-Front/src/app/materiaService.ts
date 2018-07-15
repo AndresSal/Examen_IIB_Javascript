@@ -11,6 +11,7 @@ export class MateriaService {
 
   private URLListaMaterias = 'http://localhost:1337/Materia';
   private URLMateriaEspecifica = 'http://localhost:1337/Materia/?idMateria=';
+  private URLMateriasDeUnEstudiante = 'http://localhost:1337/Materia/?estudianteFK=';
   constructor(private _http:HttpClient){}
 
   consultarListaMaterias():Observable<Materia[]>{
@@ -29,11 +30,17 @@ export class MateriaService {
     let nuevoID= idMateria+10;
     let nuevoURL = this.URLListaMaterias+'/'+nuevoID;
     let cuerpoDeCambios = {
-      esDisponible: true,
+      esDisponible: false,
       estudianteFK : idEstudiante
     };
     return this._http.put<Materia[]>(nuevoURL,JSON.stringify(cuerpoDeCambios));
   }
+
+  consultarMateriasDeMiEstudiante(fkEstudiante: number): Observable<Materia[]>{
+    let nuevoURL = this.URLMateriasDeUnEstudiante+fkEstudiante;
+    return this._http.get<Materia[]>(nuevoURL);
+
+}
 
 }
 
