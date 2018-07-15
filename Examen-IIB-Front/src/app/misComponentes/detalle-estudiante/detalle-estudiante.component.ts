@@ -26,14 +26,12 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this._internalService.cargarIDComponentePadre(this.myID);
-    //this.obtenerMiEstudianteEscogido();
     this.obtenerEstudianteEscogido();
     console.log('luego de la conexion mi estudiante tiene: ',this.estudianteEscogido);
   }
 
   ngOnChanges(cambio) {
     console.log('algo paso ',cambio);
-    this.obtenerMiEstudianteEscogido();
   }
 
 
@@ -51,28 +49,11 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
   }
 
 
-
-
-
   obtenerIdDeMiEstudiante(){
     this.idEstudiante = this._internalService.retornarEstudianteEscogido().idEstudiante;
     console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
   }
 
-
-  obtenerMiEstudianteEscogido(){
-    this.obtenerIdDeMiEstudiante();
-    this._estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
-      // .subscribe(res=>this.estudianteEscogido=res)
-      .subscribe(
-        res => {
-          console.log('el servidor me envió lo siguiente: ',res);
-          this.estudianteEscogido = <Estudiante> res;
-          console.log('ahora tengo al estudiante: ',this.estudianteEscogido);
-          return this.estudianteEscogido;
-        }
-      )
-  }
 
 
 
