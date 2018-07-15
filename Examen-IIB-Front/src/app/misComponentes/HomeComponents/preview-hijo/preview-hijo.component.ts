@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MateriaService} from "../../../materiaService";
 import {Materia} from "../../../Materia";
 import {Message} from "primeng/api";
+import {Router} from "@angular/router";
+import {InternalService} from "../../../internalService";
 
 @Component({
   selector: 'app-preview-hijo',
@@ -12,14 +14,20 @@ import {Message} from "primeng/api";
 export class PreviewHijoComponent implements OnInit {
 
   materias: Materia[];
-  materiaescogida;
+  materiaescogida: Materia;
   msgs: Message[];
+  isSelectable: boolean = true;
+  idEstudianteEscogido: number;
 
-  constructor(private _materiaService: MateriaService) { }
+  constructor(private _materiaService: MateriaService,
+              private _router: Router,
+              private _internalService: InternalService)
+  {
+
+  }
 
   ngOnInit() {
     this.obtenerListaMaterias();
-    //this.recibirMaterias();
   }
 
   obtenerListaMaterias(){
@@ -31,6 +39,20 @@ export class PreviewHijoComponent implements OnInit {
     this.materiaescogida = materia;
     this.msgs = [];
     this.msgs.push({severity: 'info', summary: 'Materia Escogida', detail: 'Nombre:' + this.materiaescogida.nombreMateria});
+    this.definirRutaDeDespliegue(this._internalService.retornarIDComponentePadre());
   }
+
+  definirRutaDeDespliegue(idPadre: number){
+    let url;
+    if(idPadre==1){
+      url = ['/Materia/'+this.materiaescogida.idMateria];
+    }else if(idPadre==2){
+      this.idEstudianteEscogido = this._internalService.retornarEstudianteEscogido().idEstudiante;
+      url = ['/Estudiante/'+this.idEstudianteEscogido+"/Materia/"+this.materiaescogida.idMateria]
+    }
+    this._router.navigate(url);
+  }
+
+
 
 }

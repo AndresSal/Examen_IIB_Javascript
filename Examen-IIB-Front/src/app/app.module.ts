@@ -34,6 +34,7 @@ import { DatosCuentaComponent } from './misComponentes/CarritoComponents/datos-c
 import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-total/monto-total.component';
 import { DescripcionMateriaEscogidaComponent } from './misComponentes/Shared Components/descripcion-materia-escogida/descripcion-materia-escogida.component';
 import {OrderListModule} from 'primeng/orderlist';
+import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dmateria-auxiliar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import {OrderListModule} from 'primeng/orderlist';
     CabeceraFacturacionComponent,
     DatosCuentaComponent,
     MontoTotalComponent,
-    DescripcionMateriaEscogidaComponent
+    DescripcionMateriaEscogidaComponent,
+    DMateriaAuxiliarComponent
   ],
   imports: [
     BrowserModule,

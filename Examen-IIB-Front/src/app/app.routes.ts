@@ -4,6 +4,7 @@ import {PageNotFoundComponent} from "./misComponentes/page-not-found/page-not-fo
 import {CarritoComponent} from "./misComponentes/carrito/carrito.component";
 import {DetalleEstudianteComponent} from "./misComponentes/detalle-estudiante/detalle-estudiante.component";
 import {DetalleMateriaComponent} from "./misComponentes/detalle-materia/detalle-materia.component";
+import {DMateriaAuxiliarComponent} from "./misComponentes/dmateria-auxiliar/dmateria-auxiliar.component";
 
 
 export const RUTAS_APP: Routes = [
@@ -31,7 +32,10 @@ export const RUTAS_APP: Routes = [
       }
     ]
   },
-
+  {
+    path:'Materia/:id',
+    component: DetalleMateriaComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent

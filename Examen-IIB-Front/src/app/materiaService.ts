@@ -16,8 +16,6 @@ export class MateriaService {
   }
 
   consultarMateriaEspecifica(id):Observable<Materia>{
-    // let nuevaURL = this.URLMateriaEspecifica+id;
-    // console.log('voy a enviar esta url: ',nuevaURL);
     return this._http.get<Materia>(this.URLMateriaEspecifica+id);
   }
 

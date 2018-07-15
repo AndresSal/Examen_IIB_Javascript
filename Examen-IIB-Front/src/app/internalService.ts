@@ -1,16 +1,43 @@
 import {Injectable} from "@angular/core";
+import {Estudiante} from "./Estudiante";
+import {Materia} from "./Materia";
 
 @Injectable()
 export class InternalService {
-  idEstudianteEscogido: number;
+
+  estudianteEscogido: Estudiante;
+  materiaEscogida: Materia;
+  IDComponentePadre: number;
+
+
   constructor(){}
 
-  cargarIdEstudianteEscogido(id:number){
-    this.idEstudianteEscogido = id;
-    console.log('en el internal service el id es: ',this.idEstudianteEscogido);
+  cargarIDComponentePadre(id: number){
+    this.IDComponentePadre = id;
+    console.log('ahora el ID del padre es ',this.IDComponentePadre);
   }
 
-  retornarIdEstudianteEscogido(){
-    return this.idEstudianteEscogido;
+  retornarIDComponentePadre(){
+    return this.IDComponentePadre;
   }
+
+  cargarEstudianteEscogido(estudiante: Estudiante){
+    this.estudianteEscogido = estudiante;
+    console.log('estudiante actual: ',this.estudianteEscogido);
+  }
+
+  retornarEstudianteEscogido(){
+    return this.estudianteEscogido;
+  }
+
+  cargarMateriaEscogida(materia: Materia){
+    this.materiaEscogida = this.materiaEscogida;
+    console.log('materia escogida: ',this.materiaEscogida);
+  }
+
+  retornarMateriaEscogida (){
+    return this.materiaEscogida;
+  }
+
+
 }

@@ -18,8 +18,6 @@ export class EstudianteService{
   }
 
   consultarEstudianteEspecifico(id):Observable<Estudiante>{
-    // let nuevaURL = this.URLEstudianteEspecifico+id;
-    // console.log('voy a enviar esta url: ',nuevaURL);
     return this._http.get<Estudiante>(this.URLEstudianteEspecifico+id);
   }
 

@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Estudiante} from "../../Estudiante";
 import {EstudianteService} from "../../estudianteService";
 import {InternalService} from "../../internalService";
@@ -13,11 +13,14 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
   idEstudiante:number;
   @Input() estudianteEscogido: Estudiante;
-
+  myID: number;
   constructor(private _estudianteService:EstudianteService,
-              private _internalService:InternalService) { }
+              private _internalService:InternalService) {
+    this.myID = 2;
+  }
 
   ngOnInit() {
+    this._internalService.cargarIDComponentePadre(this.myID);
     this.obtenerMiEstudianteEscogido();
     console.log('luego de la conexion mi estudiante tiene: ',this.estudianteEscogido);
   }
@@ -28,7 +31,7 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
   }
 
   obtenerIdDeMiEstudiante(){
-    this.idEstudiante = this._internalService.retornarIdEstudianteEscogido();
+    this.idEstudiante = this._internalService.retornarEstudianteEscogido().idEstudiante;
     console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
   }
 

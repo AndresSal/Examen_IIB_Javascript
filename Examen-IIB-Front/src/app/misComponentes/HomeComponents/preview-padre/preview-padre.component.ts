@@ -11,7 +11,8 @@ import {InternalService} from "../../../internalService";
   styleUrls: ['./preview-padre.component.css']
 })
 export class PreviewPadreComponent implements OnInit, OnChanges {
-  id: number;
+
+  estudianteTemporal: Estudiante;
   misEstudiantes: Estudiante[];
 
   constructor(private _router: Router,
@@ -42,13 +43,13 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
   }
 
   escogerEstudiante(estudiante: Estudiante) {
-    this.id = estudiante.idEstudiante;
-    this._internalService.cargarIdEstudianteEscogido(this.id);
+    this.estudianteTemporal = estudiante;
+    this._internalService.cargarEstudianteEscogido(this.estudianteTemporal);
     this.irADescripcionEstudiante();
   }
 
   irADescripcionEstudiante (){
-    const url = ['/Estudiante/'+this.id];
+    const url = ['/Estudiante/'+this.estudianteTemporal.idEstudiante];
     this._router.navigate(url);
   }
 

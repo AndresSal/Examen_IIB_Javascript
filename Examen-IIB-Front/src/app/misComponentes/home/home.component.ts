@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {InternalService} from "../../internalService";
 
 @Component({
   selector: 'app-home',
@@ -7,29 +8,16 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  // idEstudiantePreview: number;
-  // @Output() envioIntermedio = new EventEmitter();
 
-  //@Output() paqueteListaEstudiantes = new EventEmitter();
+  myID :number;
 
-  constructor() { }
-
-  ngOnInit() {
-    // this.enviarListaEstudiantes(this.listaEstudiantes)
+  constructor(private _internalService: InternalService) {
+    this.myID = 1;
   }
 
-  // enviarListaEstudiantes (arregloEstudiantes)
-  // {
-  //   console.log('enviando la lista de estudiantes a mi hijo');
-  //   this.paqueteListaEstudiantes.emit(arregloEstudiantes);
-  // }
+  ngOnInit() {
+    this._internalService.cargarIDComponentePadre(this.myID);
+  }
 
-  // recibiIDEstudianteDelPreview($event){
-  //   console.log ('recibí el id: ',$event);
-  //   this.idEstudiantePreview = $event;
-  //   console.log('enviando al APP el id: ',this.idEstudiantePreview);
-  //   this.envioIntermedio.emit(this.idEstudiantePreview);
-  //   console.log('ya envie el id');
-  // }
 
 }
