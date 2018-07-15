@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Estudiante} from "./Estudiante";
 import {Observable} from "rxjs/index";
 
+
 @Injectable(
   {providedIn: 'root'}
 )
@@ -19,6 +20,10 @@ export class EstudianteService{
 
   consultarEstudianteEspecifico(id):Observable<Estudiante>{
     return this._http.get<Estudiante>(this.URLEstudianteEspecifico+id);
+  }
+
+  arregloConEstudianteBuscado(id):Observable<Estudiante[]>{
+    return this._http.get<Estudiante[]>(this.URLEstudianteEspecifico+id);
   }
 
 }

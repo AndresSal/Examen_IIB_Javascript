@@ -37,8 +37,11 @@ export class PreviewHijoComponent implements OnInit {
 
   escogerMateria(materia: Materia) {
     this.materiaescogida = materia;
+    console.log('Bien he escogido la materia: ',this.materiaescogida);
     this.msgs = [];
     this.msgs.push({severity: 'info', summary: 'Materia Escogida', detail: 'Nombre:' + this.materiaescogida.nombreMateria});
+    this._internalService.cargarMateriaEscogida(this.materiaescogida);
+    console.log('Genial ya puse la materia ',this.materiaescogida,' en el servicio interno de la app')
     this.definirRutaDeDespliegue(this._internalService.retornarIDComponentePadre());
   }
 

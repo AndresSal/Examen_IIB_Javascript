@@ -1,12 +1,15 @@
-<p-dataView [value]="cars">
-  <ng-template let-car pTemplate="listItem">
+<p-dataView [value]="listaMateriaEscogida">
+  <ng-template let-mat pTemplate="listItem">
     <div>
-      {{car.id}}
+      {{mat.nombreMateria}}
+    </div>
+    <div>
+      {{mat.descripcionMateria}}
     </div>
   </ng-template>
   <ng-template let-car pTemplate="gridItem">
     <div class="ui-g-12 ui-md-3">
-      {{car.year}}
+      {{mat.codigoMateria}}
     </div>
   </ng-template>
 </p-dataView>

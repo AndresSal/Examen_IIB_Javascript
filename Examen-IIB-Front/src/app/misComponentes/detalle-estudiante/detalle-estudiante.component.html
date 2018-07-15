@@ -2,22 +2,22 @@
 <br>
 <div class="container" style="background-color: greenyellow">
   <h1>Descripción del Estudiante</h1>
-  <mat-card class="example-card" *ngIf="estudianteEscogido">
+  <mat-card class="example-card" *ngFor="let est of listaEstudianteEscogido">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image" ></div>
-      <mat-card-title>{{estudianteEscogido.nombreEstudiante}}</mat-card-title>
-      <mat-card-subtitle>{{estudianteEscogido.nombreEstudiante}}</mat-card-subtitle>
+      <mat-card-title>{{est.nombreEstudiante}}</mat-card-title>
+      <mat-card-subtitle>{{est.nombreEstudiante}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="estudianteEscogido.fotoEstudiante" [alt]="'Photo of estudianteEscogido.nombreEstudiante'" width="80">
+    <img mat-card-image [src]="est.fotoEstudiante" [alt]="'Photo of estudianteEscogido.nombreEstudiante'" width="80">
     <mat-card-content>
       <p>
-        Nombre: {{estudianteEscogido.nombreEstudiante}}
+        Nombre: {{est.nombreEstudiante}}
       </p>
       <p>
-        Apellido: {{estudianteEscogido.apellidoEstudiante}}
+        Apellido: {{est.apellidoEstudiante}}
       </p>
       <p>
-        Semestre Actual: {{estudianteEscogido.semestreActual}}
+        Semestre Actual: {{est.semestreActual}}
       </p>
     </mat-card-content>
     <mat-card-actions>

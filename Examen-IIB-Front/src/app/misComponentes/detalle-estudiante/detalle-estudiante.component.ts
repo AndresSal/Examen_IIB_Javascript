@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angula
 import {Estudiante} from "../../Estudiante";
 import {EstudianteService} from "../../estudianteService";
 import {InternalService} from "../../internalService";
+import {Materia} from "../../Materia";
 
 
 @Component({
@@ -14,6 +15,10 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
   idEstudiante:number;
   @Input() estudianteEscogido: Estudiante;
   myID: number;
+
+  listaEstudianteEscogido: Estudiante[];
+
+
   constructor(private _estudianteService:EstudianteService,
               private _internalService:InternalService) {
     this.myID = 2;
@@ -21,7 +26,8 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this._internalService.cargarIDComponentePadre(this.myID);
-    this.obtenerMiEstudianteEscogido();
+    //this.obtenerMiEstudianteEscogido();
+    this.obtenerEstudianteEscogido();
     console.log('luego de la conexion mi estudiante tiene: ',this.estudianteEscogido);
   }
 
@@ -29,6 +35,24 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
     console.log('algo paso ',cambio);
     this.obtenerMiEstudianteEscogido();
   }
+
+
+  obtenerEstudianteEscogido(){
+    this.obtenerIdDeMiEstudiante();
+    this._estudianteService.arregloConEstudianteBuscado(
+      this.idEstudiante)
+      .subscribe(
+        res => {
+          console.log('estoy en Detalle Estudiante.  El resultado de la consulta es: ',res);
+          this.listaEstudianteEscogido = <Estudiante[]>res;
+          console.log('ahora mi arreglo de estudiante tiene: ',this.listaEstudianteEscogido);
+        }
+      )
+  }
+
+
+
+
 
   obtenerIdDeMiEstudiante(){
     this.idEstudiante = this._internalService.retornarEstudianteEscogido().idEstudiante;

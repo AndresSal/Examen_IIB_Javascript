@@ -19,5 +19,8 @@ export class MateriaService {
     return this._http.get<Materia>(this.URLMateriaEspecifica+id);
   }
 
+  arregloConEstudianteBuscado(id):Observable<Materia[]>{
+    return this._http.get<Materia[]>(this.URLMateriaEspecifica+id);
+  }
 }
 

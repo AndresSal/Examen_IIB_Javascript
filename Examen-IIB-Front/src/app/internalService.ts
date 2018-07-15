@@ -10,6 +10,8 @@ export class InternalService {
   IDComponentePadre: number;
 
 
+  idMateria: number;
+
   constructor(){}
 
   cargarIDComponentePadre(id: number){
@@ -31,13 +33,14 @@ export class InternalService {
   }
 
   cargarMateriaEscogida(materia: Materia){
-    this.materiaEscogida = this.materiaEscogida;
+    this.materiaEscogida = materia;
     console.log('materia escogida: ',this.materiaEscogida);
   }
 
   retornarMateriaEscogida (){
     return this.materiaEscogida;
   }
+
 
 
 }
