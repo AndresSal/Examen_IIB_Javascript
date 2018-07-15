@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Estudiante} from "../../../Estudiante";
-import {Message} from "primeng/api";
 import {EstudianteService} from "../../../estudianteService";
 import {InternalService} from "../../../internalService";
+
 
 @Component({
   selector: 'app-preview-padre',
@@ -11,38 +11,34 @@ import {InternalService} from "../../../internalService";
   styleUrls: ['./preview-padre.component.css']
 })
 export class PreviewPadreComponent implements OnInit, OnChanges {
-  id:number;
-  errorMessage: string;
-  misEstudiantes : Estudiante[];
+  id: number;
+  misEstudiantes: Estudiante[];
 
-  @Output() deliverIDEstudiante = new EventEmitter();
-
-
-  constructor(private _router:Router,
+  constructor(private _router: Router,
               private _estudianteService: EstudianteService,
-              private _internalService: InternalService) { }
-
-  ngOnInit() {
-    console.log('principio');
-    this._estudianteService.verListaEstudiantes();
-    this.obtenerTodosLosEstudiantes();
+              private _internalService: InternalService) {
   }
 
-  ngOnChanges(algoCambio){
+  ngOnInit() {
+    this.obtenerListaEstudiantes();
+    console.log('luego de la conexion el arreglo tiene: '+this.misEstudiantes);
+
+  }
+
+  ngOnChanges(algoCambio) {
+    this.obtenerListaEstudiantes();
     console.log('recibí algo:');
   }
 
-  obtenerTodosLosEstudiantes (){
-    this._estudianteService.obtenerListaEstudiantes()
-      .then(laLista => {
-        this.misEstudiantes = laLista;
-        if(this.misEstudiantes.length === 0){
-          this.errorMessage = 'no hay registros en el arreglo';
+  obtenerListaEstudiantes(){
+    this._estudianteService.consultarListaEstudiantes()
+      .subscribe(res => {
+          console.log('el servidor arrojó la lista: '+res);
+          this.misEstudiantes = <Estudiante[]>res;
+          console.log('ahora mi arreglo tiene lo siguiente: '+this.misEstudiantes);
+          return this.misEstudiantes;
         }
-    }, error => {
-        console.error('Ha ocurrido un error: '+error);
-      })
-    console.log('mi arreglo: ',this.misEstudiantes);
+      )
   }
 
   escogerEstudiante(estudiante: Estudiante) {
@@ -55,7 +51,5 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
     const url = ['/Estudiante/'+this.id];
     this._router.navigate(url);
   }
-
-
 
 }

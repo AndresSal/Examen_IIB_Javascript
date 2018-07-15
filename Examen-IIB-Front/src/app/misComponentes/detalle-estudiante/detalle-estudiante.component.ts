@@ -1,25 +1,30 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Estudiante} from "../../Estudiante";
 import {EstudianteService} from "../../estudianteService";
 import {InternalService} from "../../internalService";
+
 
 @Component({
   selector: 'app-detalle-estudiante',
   templateUrl: './detalle-estudiante.component.html',
   styleUrls: ['./detalle-estudiante.component.css']
 })
-export class DetalleEstudianteComponent implements OnInit {
+export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
   idEstudiante:number;
-  estudianteArray : Estudiante[];
-  estudianteEscogido: Estudiante;
-  constructor(private estudianteService:EstudianteService,
+  @Input() estudianteEscogido: Estudiante;
+
+  constructor(private _estudianteService:EstudianteService,
               private _internalService:InternalService) { }
 
   ngOnInit() {
-    const observableParametro$ = this.estudianteEscogido;
-    this.estudianteService.verListaEstudiantes();
-    this.obtenerMiEstudiante(observableParametro$);
+    this.obtenerMiEstudianteEscogido();
+    console.log('luego de la conexion mi estudiante tiene: ',this.estudianteEscogido);
+  }
+
+  ngOnChanges(cambio) {
+    console.log('algo paso ',cambio);
+    this.obtenerMiEstudianteEscogido();
   }
 
   obtenerIdDeMiEstudiante(){
@@ -27,12 +32,21 @@ export class DetalleEstudianteComponent implements OnInit {
     console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
   }
 
-  obtenerMiEstudiante (parametroObservable) {
-    this.obtenerIdDeMiEstudiante();
-    parametroObservable.consultarEstudianteEspecifico(this.idEstudiante)
-      .then(estudiante => this.estudianteEscogido = estudiante);
 
+  obtenerMiEstudianteEscogido(){
+    this.obtenerIdDeMiEstudiante();
+    this._estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
+      // .subscribe(res=>this.estudianteEscogido=res)
+      .subscribe(
+        res => {
+          console.log('el servidor me envió lo siguiente: ',res);
+          this.estudianteEscogido = <Estudiante> res;
+          console.log('ahora tengo al estudiante: ',this.estudianteEscogido);
+          return this.estudianteEscogido;
+        }
+      )
   }
+
 
 
 }

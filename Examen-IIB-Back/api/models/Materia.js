@@ -36,9 +36,9 @@ module.exports = {
       type: 'number',
       required: false
     },
-    // estudianteFK: {
-    //   model: 'Estudiante'
-    // }
+    estudianteFK: {
+      model: 'Estudiante'
+    }
   },
 
 };

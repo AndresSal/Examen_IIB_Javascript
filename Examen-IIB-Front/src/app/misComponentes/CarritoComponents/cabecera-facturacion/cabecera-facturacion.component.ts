@@ -21,17 +21,17 @@ export class CabeceraFacturacionComponent implements OnInit {
               private _estudianteService: EstudianteService) { }
 
   ngOnInit() {
-  this.obtenerDatosDelEstudiante();
+  // this.obtenerDatosDelEstudiante();
   }
 
   obtenerIdDelEstudiante(){
     this.idEstudiante = this._internalService.retornarIdEstudianteEscogido();
   }
 
-  obtenerDatosDelEstudiante(){
-    this.obtenerIdDelEstudiante();
-    this._estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
-      .then(estudianteObtenido => this.estudianteDelDetalle = estudianteObtenido);
-  }
+  // obtenerDatosDelEstudiante(){
+  //   this.obtenerIdDelEstudiante();
+  //   this._estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
+  //     .then(estudianteObtenido => this.estudianteDelDetalle = estudianteObtenido);
+  // }
 
 }

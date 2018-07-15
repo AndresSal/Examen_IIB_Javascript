@@ -1,16 +1,25 @@
 import {Injectable} from "@angular/core";
 import {Materia} from "./Materia";
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs/index";
+import {Estudiante} from "./Estudiante";
 
 @Injectable()
 export class MateriaService {
+
+  private URLListaMaterias = 'http://localhost:1337/Materia';
+  private URLMateriaEspecifica = 'http://localhost:1337/Materia/?idMateria=';
   constructor(private _http:HttpClient){}
 
-  obtenerMaterias() {
-    return this._http.get<any>('http://localhost:1337/Materia')
-      .toPromise()
-      .then(res => <Materia[]>res)
-      .then(data => { return data; });
+  consultarListaMaterias():Observable<Materia[]>{
+    return this._http.get<Materia[]>(this.URLListaMaterias);
   }
+
+  consultarMateriaEspecifica(id):Observable<Materia>{
+    // let nuevaURL = this.URLMateriaEspecifica+id;
+    // console.log('voy a enviar esta url: ',nuevaURL);
+    return this._http.get<Materia>(this.URLMateriaEspecifica+id);
+  }
+
 }
 

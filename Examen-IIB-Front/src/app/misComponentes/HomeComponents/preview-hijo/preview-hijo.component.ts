@@ -18,11 +18,13 @@ export class PreviewHijoComponent implements OnInit {
   constructor(private _materiaService: MateriaService) { }
 
   ngOnInit() {
-    this.recibirMaterias();
+    this.obtenerListaMaterias();
+    //this.recibirMaterias();
   }
 
-  recibirMaterias(){
-    this._materiaService.obtenerMaterias().then(materias => this.materias = materias);
+  obtenerListaMaterias(){
+    this._materiaService.consultarListaMaterias()
+      .subscribe(res => this.materias = <Materia[]>res)
   }
 
   escogerMateria(materia: Materia) {
