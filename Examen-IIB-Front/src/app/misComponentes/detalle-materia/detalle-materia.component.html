@@ -1,15 +1,44 @@
 <p-dataView [value]="listaMateriaEscogida">
+
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <div class="ui-g">
+        <h1>Materia Seleccionada</h1>
+      </div>
+    </div>
+  </p-header>
+
+
   <ng-template let-mat pTemplate="listItem">
-    <div>
-      {{mat.nombreMateria}}
-    </div>
-    <div>
-      {{mat.descripcionMateria}}
+    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+      <div class="ui-g-12 ui-md-8">
+        <div class="ui-g">
+          <div class="ui-g-2 ui-sm-6"><h5>Nombre de Materia:</h5></div>
+          <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.nombreMateria}}</h5></b></div>
+
+          <div class="ui-g-2 ui-sm-6"><h5>Codigo de Materia:</h5></div>
+          <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.codigoMateria}}</h5></b></div>
+
+          <div class="ui-g-2 ui-sm-6"><h5>Descripción de Materia:</h5></div>
+          <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.descripcionMateria}}</h5></b></div>
+
+          <div class="ui-g-2 ui-sm-6"><h5>Numero de Horas a la semana:</h5></div>
+          <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.numHorasXSemana}}</h5></b></div>
+
+          <div class="ui-g-2 ui-sm-6"><h5>¿Se encuentra disponible?:</h5></div>
+          <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.esDisponible}}</h5></b></div>
+
+        </div>
+      </div>
     </div>
   </ng-template>
-  <ng-template let-car pTemplate="gridItem">
-    <div class="ui-g-12 ui-md-3">
-      {{mat.codigoMateria}}
-    </div>
-  </ng-template>
+  <!--<ng-template let-mat pTemplate="gridItem">-->
+    <!--<div style="padding:.5em" class="ui-g-12 ui-md-3">-->
+      <!--<p-panel [header]="mat.nombreMateria" [style]="{'text-align':'center'}">-->
+        <!--<div class="car-detail">{{mat.codigoMateria}} - {{car.color}}</div>-->
+        <!--<hr class="ui-widget-content" style="border-top:0">-->
+        <!--<button pButton type="button" icon="pi pi-search" (click)="selectCar($event, car)" style="margin-top:0"></button>-->
+      <!--</p-panel>-->
+    <!--</div>-->
+  <!--</ng-template>-->
 </p-dataView>

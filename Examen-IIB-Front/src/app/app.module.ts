@@ -35,6 +35,7 @@ import { MontoTotalComponent } from './misComponentes/CarritoComponents/monto-to
 import { DescripcionMateriaEscogidaComponent } from './misComponentes/Shared Components/descripcion-materia-escogida/descripcion-materia-escogida.component';
 import {OrderListModule} from 'primeng/orderlist';
 import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dmateria-auxiliar.component';
+import {PanelModule} from 'primeng/panel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dm
     GrowlModule,
     MatListModule,
     DataScrollerModule,
-    OrderListModule
+    OrderListModule,
+    PanelModule
   ],
   providers: [
     EstudianteService,

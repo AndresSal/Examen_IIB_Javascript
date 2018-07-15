@@ -23,6 +23,7 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
     this.obtenerIDMateriaSeleccionada();
+    this.obtenerMateriaEscogida();
   }
 
   obtenerIDMateriaSeleccionada(){
