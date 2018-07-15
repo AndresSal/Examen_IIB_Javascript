@@ -13,6 +13,7 @@
     <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
       <div class="ui-g-12 ui-md-8">
         <div class="ui-g">
+
           <div class="ui-g-2 ui-sm-6"><h5>Nombre de Materia:</h5></div>
           <div class="ui-g-10 ui-sm-6"><b><h5>{{mat.nombreMateria}}</h5></b></div>
 
@@ -30,6 +31,11 @@
 
         </div>
       </div>
+
+      <div class="ui-g-12 ui-md-1 search-icon" *ngIf="esSeleccionable==true">
+        <button pButton type="button" icon="pi pi-search" (click)="actualizarMateriaEscogida()"></button>
+      </div>
+
     </div>
   </ng-template>
 </p-dataView>

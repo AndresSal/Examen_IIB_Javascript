@@ -59,7 +59,7 @@ module.exports.models = {
   /***************************************************************************
   *                                                                          *
   * Base attributes that are included in all of your models by default.      *
-  * By convention, this is your primary key attribute (`id`), as well as two *
+  * By convention, this is your primary key attribute (`idMateria`), as well as two *
   * other timestamp attributes for tracking when records were last created   *
   * or updated.                                                              *
   *                                                                          *
@@ -74,10 +74,10 @@ module.exports.models = {
     id: { type: 'number', autoIncrement: true, },
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
-    //  ||   Replace `id` above with this instead:
+    //  ||   Replace `idMateria` above with this instead:
     //
     // ```
-    // id: { type: 'string', columnName: '_id' },
+    // idMateria: { type: 'string', columnName: '_id' },
     // ```
     //
     // Plus, don't forget to configure MongoDB as your default datastore:

@@ -23,17 +23,17 @@ export const RUTAS_APP: Routes = [
     component: CarritoComponent
   },
   {
-    path: 'Estudiante/:id',
+    path: 'Estudiante/:idMateria',
     component: DetalleEstudianteComponent,
     children: [
       {
-        path: 'Materia/:id',
+        path: 'Materia/:idMateria',
         component: DetalleMateriaComponent
       }
     ]
   },
   {
-    path:'Materia/:id',
+    path:'Materia/:idMateria',
     component: DetalleMateriaComponent
   },
   {

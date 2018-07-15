@@ -22,21 +22,21 @@ export class PreviewPadreComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.obtenerListaEstudiantes();
-    console.log('luego de la conexion el arreglo tiene: '+this.misEstudiantes);
+    //console.log('luego de la conexion el arreglo tiene: '+this.misEstudiantes);
 
   }
 
   ngOnChanges(algoCambio) {
     this.obtenerListaEstudiantes();
-    console.log('recibí algo:');
+    //console.log('recibí algo:');
   }
 
   obtenerListaEstudiantes(){
     this._estudianteService.consultarListaEstudiantes()
       .subscribe(res => {
-          console.log('el servidor arrojó la lista: '+res);
+          //console.log('el servidor arrojó la lista: '+res);
           this.misEstudiantes = <Estudiante[]>res;
-          console.log('ahora mi arreglo tiene lo siguiente: '+this.misEstudiantes);
+          //console.log('ahora mi arreglo tiene lo siguiente: '+this.misEstudiantes);
           return this.misEstudiantes;
         }
       )

@@ -12,10 +12,8 @@ import {Materia} from "../../Materia";
 })
 export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
-  idEstudiante:number;
-  @Input() estudianteEscogido: Estudiante;
   myID: number;
-
+  idEstudiante:number;
   listaEstudianteEscogido: Estudiante[];
 
 
@@ -27,7 +25,6 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
   ngOnInit() {
     this._internalService.cargarIDComponentePadre(this.myID);
     this.obtenerEstudianteEscogido();
-    console.log('luego de la conexion mi estudiante tiene: ',this.estudianteEscogido);
   }
 
   ngOnChanges(cambio) {

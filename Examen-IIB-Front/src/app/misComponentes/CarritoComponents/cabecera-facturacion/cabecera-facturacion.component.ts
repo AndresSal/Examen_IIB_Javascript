@@ -10,28 +10,33 @@ import {Estudiante} from "../../../Estudiante";
 })
 export class CabeceraFacturacionComponent implements OnInit {
 
-  @Input() nombre: string;
-  @Input() apellido: string;
-  @Input() fechaNacimiento: string;
-  @Input() semestreActual: string;
+
   idEstudiante: number;
-  estudianteDelDetalle : Estudiante[];
+  resultadosConsulta : Estudiante[];
 
   constructor(private _internalService: InternalService,
               private _estudianteService: EstudianteService) { }
 
   ngOnInit() {
-  // this.obtenerDatosDelEstudiante();
+    this.obtenerEstudianteParaFacturacion();
   }
 
-  obtenerIdDelEstudiante(){
-    this.idEstudiante = this._internalService.retornarIdEstudianteEscogido();
+  obtenerEstudianteParaFacturacion(){
+    this.obtenerIdDeMiEstudiante();
+    this._estudianteService.arregloConEstudianteBuscado(
+      this.idEstudiante)
+      .subscribe(
+        res => {
+          console.log('estoy en Detalle Estudiante.  El resultado de la consulta es: ',res);
+          this.resultadosConsulta = <Estudiante[]>res;
+        }
+      )
   }
 
-  // obtenerDatosDelEstudiante(){
-  //   this.obtenerIdDelEstudiante();
-  //   this._estudianteService.consultarEstudianteEspecifico(this.idEstudiante)
-  //     .then(estudianteObtenido => this.estudianteDelDetalle = estudianteObtenido);
-  // }
+
+  obtenerIdDeMiEstudiante(){
+    this.idEstudiante = this._internalService.retornarEstudianteEscogido().idEstudiante;
+    console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
+  }
 
 }
