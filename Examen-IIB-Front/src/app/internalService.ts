@@ -8,9 +8,7 @@ export class InternalService {
   estudianteEscogido: Estudiante;
   materiaEscogida: Materia;
   IDComponentePadre: number;
-
-
-  idMateria: number;
+  contadorCarrito: number;
 
   constructor(){}
 
@@ -26,6 +24,7 @@ export class InternalService {
   cargarEstudianteEscogido(estudiante: Estudiante){
     this.estudianteEscogido = estudiante;
     console.log('estudiante actual: ',this.estudianteEscogido);
+    this.contadorCarrito = 0;
   }
 
   retornarEstudianteEscogido(){
@@ -40,6 +39,19 @@ export class InternalService {
   retornarMateriaEscogida (){
     return this.materiaEscogida;
   }
+
+  aumentarContador(){
+    return ++this.contadorCarrito;
+  }
+
+  disminuirContador(){
+    return --this.contadorCarrito;
+  }
+
+  retornarContador(){
+    return this.contadorCarrito;
+  }
+
 
 
 

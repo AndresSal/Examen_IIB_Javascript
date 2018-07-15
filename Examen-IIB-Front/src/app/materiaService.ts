@@ -26,7 +26,7 @@ export class MateriaService {
     return this._http.get<Materia[]>(this.URLMateriaEspecifica+id);
   }
 
-  actualizarDisponibilidadDeLaMateria(idMateria: number, idEstudiante:number): Observable<Materia[]>{
+  asociarMateriaConEstudiante(idMateria: number, idEstudiante:number): Observable<Materia[]>{
     let nuevoID= idMateria+10;
     let nuevoURL = this.URLListaMaterias+'/'+nuevoID;
     let cuerpoDeCambios = {
@@ -36,11 +36,22 @@ export class MateriaService {
     return this._http.put<Materia[]>(nuevoURL,JSON.stringify(cuerpoDeCambios));
   }
 
+  quitarMateriaDelEstudiante(idMateria: number): Observable<Materia[]>{
+    let nuevoID= idMateria+10;
+    let nuevoURL = this.URLListaMaterias+'/'+nuevoID;
+    let cuerpoDeCambios = {
+      esDisponible: true,
+      estudianteFK : null
+    };
+    return this._http.put<Materia[]>(nuevoURL,JSON.stringify(cuerpoDeCambios));
+  }
+
   consultarMateriasDeMiEstudiante(fkEstudiante: number): Observable<Materia[]>{
     let nuevoURL = this.URLMateriasDeUnEstudiante+fkEstudiante;
     return this._http.get<Materia[]>(nuevoURL);
+  }
 
-}
+
 
 }
 

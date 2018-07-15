@@ -51,12 +51,13 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
 
   actualizarMateriaEscogida(){
     this.obtenerIDEstudianteSeleccionado();
-    this._materiaService.actualizarDisponibilidadDeLaMateria(this.idMateria,this.idEstudiante)
+    this._materiaService.asociarMateriaConEstudiante(this.idMateria,this.idEstudiante)
       .subscribe(
         res => {
           console.log('Bien Hemos hecho el cambio');
           this.listaMateriaEscogida = <Materia[]>res;
           console.log('la materia ahora tiene: ',this.listaMateriaEscogida);
+          this._internarlService.aumentarContador();
           this.irAlHome();
         }
       )
