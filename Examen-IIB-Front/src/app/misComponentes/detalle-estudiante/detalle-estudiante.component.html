@@ -42,34 +42,34 @@
           <div class="form-group">
             <label for="nombreEstudiante">Nombre del Estudiante</label>
             <div class="input-group">
-              <input id="nombreEstudiante" class="form-control" [placeholder]= "estudianteActual.nombreEstudiante" name="nombre">
+              <input id="nombreEstudiante" class="form-control" [placeholder]= "estudianteActual.nombreEstudiante" [(ngModel)]="inputNombreEstudiante" name="nombre">
             </div>
 
             <label for="apellidoEstudiante">Apellido del Estudiante</label>
             <div class="input-group">
-              <input id="apellidoEstudiante" class="form-control" [placeholder]="estudianteActual.apellidoEstudiante" name="apellido">
+              <input id="apellidoEstudiante" class="form-control" [placeholder]="estudianteActual.apellidoEstudiante" [(ngModel)]="inputApellidoEstudiante" name="apellido">
             </div>
 
             <label for="fechaNacimiento">Fecha de Nacimiento</label>
             <div class="input-group">
-              <input id="fechaNacimiento" class="form-control" [placeholder]="estudianteActual.fechaNacimiento" name="fecha">
+              <input id="fechaNacimiento" class="form-control" [placeholder]="estudianteActual.fechaNacimiento" [(ngModel)]="inputFechaNacimiento" name="fecha">
             </div>
 
             <label for="esGraduado">¿Es graduado?</label>
             <div class="input-group">
-              <input id="esGraduado" class="form-control" [placeholder]="estudianteActual.esGraduado" name="fecha">
+              <input id="esGraduado" class="form-control" [placeholder]="estudianteActual.esGraduado" name="fecha" [(ngModel)]="inputEsGraduado" name="graduado">
             </div>
 
             <label for="semestreActual">Semestre Actual</label>
             <div class="input-group">
-              <input id="semestreActual" class="form-control" [placeholder]="estudianteActual.semestreActual" name="fecha">
+              <input id="semestreActual" class="form-control" [placeholder]="estudianteActual.semestreActual" [(ngModel)]="inputSemestreActual" name="semestre" >
             </div>
 
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="actualizarAMiEstudiante()">Save</button>
       </div>
     </ng-template>
 

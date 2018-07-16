@@ -38,6 +38,7 @@ import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dm
 import {PanelModule} from 'primeng/panel';
 import { ModalEstudianteComponent } from './misComponentes/modal-estudiante/modal-estudiante.component';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +85,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
     MatListModule,
     DataScrollerModule,
     OrderListModule,
-    PanelModule
+    PanelModule,
+    FormsModule
   ],
   providers: [
     EstudianteService,

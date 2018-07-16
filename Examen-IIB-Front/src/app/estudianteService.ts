@@ -18,12 +18,14 @@ export class EstudianteService{
     return this._http.get<Estudiante[]>(this.URLListaEstudiantes);
   }
 
-  consultarEstudianteEspecifico(id):Observable<Estudiante>{
-    return this._http.get<Estudiante>(this.URLEstudianteEspecifico+id);
-  }
-
   arregloConEstudianteBuscado(id):Observable<Estudiante[]>{
     return this._http.get<Estudiante[]>(this.URLEstudianteEspecifico+id);
   }
+
+  actualizarDetalleEstudiante(id, body):Observable<Estudiante[]>{
+    let nuevoURL = this.URLListaEstudiantes+'/'+id;
+    return this._http.put<Estudiante[]>(nuevoURL,JSON.stringify(body));
+  }
+
 
 }

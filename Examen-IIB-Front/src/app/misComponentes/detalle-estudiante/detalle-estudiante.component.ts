@@ -3,6 +3,7 @@ import {Estudiante} from "../../Estudiante";
 import {EstudianteService} from "../../estudianteService";
 import {InternalService} from "../../internalService";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Router} from "@angular/router";
 
 
 
@@ -19,28 +20,19 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
   estudianteActual: Estudiante;
   closeResult: string;
 
+
+  inputNombreEstudiante: string;
+  inputApellidoEstudiante: string;
+  inputFechaNacimiento: string;
+  inputEsGraduado: boolean;
+  inputSemestreActual: number;
+
+
   constructor(private _estudianteService:EstudianteService,
               private _internalService:InternalService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private _router:Router) {
     this.myID = 2;
-  }
-
-  open(content){
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
-      .result.then((result)=>{
-        this.closeResult = `Closed with: ${result}`;
-    }, (reason)=>{
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
   }
 
   ngOnInit() {
@@ -67,13 +59,59 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
       )
   }
 
-
   obtenerIdDeMiEstudiante(){
     this.idEstudiante = this._internalService.retornarEstudianteEscogido().idEstudiante;
     console.log('en el detalle de mi estudiante, el id que tengo es: '+this.idEstudiante);
   }
 
+  actualizarAMiEstudiante(){
+    this.estudianteActual.nombreEstudiante = this.inputNombreEstudiante;
+    this.estudianteActual.apellidoEstudiante = this.inputApellidoEstudiante;
+    this.estudianteActual.fechaNacimiento = this.inputFechaNacimiento;
+    this.estudianteActual.esGraduado = this.inputEsGraduado;
+    this.estudianteActual.semestreActual = this.inputSemestreActual;
+
+    let bodyDelUpdate = {
+      nombreEstudiante: this.inputNombreEstudiante,
+      apellidoEstudiante : this.inputApellidoEstudiante,
+      fechaNacimiento : this.inputFechaNacimiento,
+      esGraduado : this.inputEsGraduado,
+      semestreActual : this.inputSemestreActual
+    };
+
+    this._estudianteService.actualizarDetalleEstudiante(this.idEstudiante,bodyDelUpdate)
+      .subscribe(
+        res => {
+          console.log('BRAVO!! se actualizaron con exito los datos del estudiante!!!');
+          console.log('ahora mi estudiante tiene la siguiente info',res);
+          this.irAlHome();
+        }
+      )
+
+  }
 
 
+  irAlHome (){
+    const url = ['/Home/'];
+    this._router.navigate(url);
+  }
+
+  open(content){
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
+      .result.then((result)=>{
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason)=>{
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
 
 }

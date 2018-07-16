@@ -27,6 +27,10 @@ export class InternalService {
     this.contadorCarrito = 0;
   }
 
+  actualizarEstudiante(estudiante: Estudiante){
+    this.estudianteEscogido = estudiante;
+  }
+
   retornarEstudianteEscogido(){
     return this.estudianteEscogido;
   }
