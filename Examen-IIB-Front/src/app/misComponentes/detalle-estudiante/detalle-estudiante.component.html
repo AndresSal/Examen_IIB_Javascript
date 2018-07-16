@@ -1,7 +1,7 @@
 <h1>Información del Estudiante</h1>
 <br>
-<div class="container">
-  <mat-card class="example-card" *ngFor="let est of listaEstudianteEscogido">
+<div class="container" *ngIf="resultadoBusqueda">
+  <mat-card class="example-card" *ngFor="let est of resultadoBusqueda">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image" ></div>
       <mat-card-title>
@@ -23,11 +23,69 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-button>MODIFICAR DATOS</button>
+      <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Modificar Datos</button>
     </mat-card-actions>
   </mat-card>
+
+
+  <div class="modalEstudiante">
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Actualizacion de la informacion del Estudiante</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="nombreEstudiante">Nombre del Estudiante</label>
+            <div class="input-group">
+              <input id="nombreEstudiante" class="form-control" [placeholder]= "estudianteActual.nombreEstudiante" name="nombre">
+            </div>
+
+            <label for="apellidoEstudiante">Apellido del Estudiante</label>
+            <div class="input-group">
+              <input id="apellidoEstudiante" class="form-control" [placeholder]="estudianteActual.apellidoEstudiante" name="apellido">
+            </div>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <div class="input-group">
+              <input id="fechaNacimiento" class="form-control" [placeholder]="estudianteActual.fechaNacimiento" name="fecha">
+            </div>
+
+            <label for="esGraduado">¿Es graduado?</label>
+            <div class="input-group">
+              <input id="esGraduado" class="form-control" [placeholder]="estudianteActual.esGraduado" name="fecha">
+            </div>
+
+            <label for="semestreActual">Semestre Actual</label>
+            <div class="input-group">
+              <input id="semestreActual" class="form-control" [placeholder]="estudianteActual.semestreActual" name="fecha">
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+      </div>
+    </ng-template>
+
+  </div>
+
+
+
+
+
+
+
+
+
 </div>
 <br>
+
 <div class="container">
   <app-preview-hijo></app-preview-hijo>
 </div>

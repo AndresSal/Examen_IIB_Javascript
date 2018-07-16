@@ -36,6 +36,8 @@ import { DescripcionMateriaEscogidaComponent } from './misComponentes/Shared Com
 import {OrderListModule} from 'primeng/orderlist';
 import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dmateria-auxiliar.component';
 import {PanelModule} from 'primeng/panel';
+import { ModalEstudianteComponent } from './misComponentes/modal-estudiante/modal-estudiante.component';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import {PanelModule} from 'primeng/panel';
     DatosCuentaComponent,
     MontoTotalComponent,
     DescripcionMateriaEscogidaComponent,
-    DMateriaAuxiliarComponent
+    DMateriaAuxiliarComponent,
+    ModalEstudianteComponent
   ],
   imports: [
     BrowserModule,
