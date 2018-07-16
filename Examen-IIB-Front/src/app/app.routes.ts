@@ -5,6 +5,7 @@ import {CarritoComponent} from "./misComponentes/carrito/carrito.component";
 import {DetalleEstudianteComponent} from "./misComponentes/detalle-estudiante/detalle-estudiante.component";
 import {DetalleMateriaComponent} from "./misComponentes/detalle-materia/detalle-materia.component";
 import {DMateriaAuxiliarComponent} from "./misComponentes/dmateria-auxiliar/dmateria-auxiliar.component";
+import {CrearEstudianteComponent} from "./misComponentes/crear-estudiante/crear-estudiante.component";
 
 
 export const RUTAS_APP: Routes = [
@@ -21,6 +22,10 @@ export const RUTAS_APP: Routes = [
   {
     path: 'Carrito',
     component: CarritoComponent
+  },
+  {
+    path: 'CrearEstudiante',
+    component: CrearEstudianteComponent
   },
   {
     path: 'Estudiante/:idMateria',

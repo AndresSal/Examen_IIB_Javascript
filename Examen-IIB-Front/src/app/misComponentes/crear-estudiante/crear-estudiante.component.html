@@ -1,0 +1,52 @@
+<h1>Crear Nuevo estudiante</h1>
+
+<div class="contenedor">
+  <mat-card style="width: 50%; text-align: center">
+    <div class="container">
+      <p>
+        <mat-form-field style="width: 100%">
+          <input matInput placeholder="Nombre del Estudiante: " [(ngModel)]="inputNombreEstudiante">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <input matInput placeholder="Apellido del Estudiante: " [(ngModel)]="inputApellidoEstudiante">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento"  [(ngModel)]="inputFechaNacimiento">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <input matInput placeholder="Semestre Actual" maxlength="1" [(ngModel)]="inputSemestreActual">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <mat-select placeholder="¿Es graduado?" [(ngModel)]="inputEsGraduado">
+            <mat-option value=true>SI</mat-option>
+            <mat-option value=false>NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <button mat-button style="text-align: right">Limpiar!</button>
+        <button mat-button style="text-align: center" (click)="ingresarUnNuevoEstudiante()">Crear!</button>
+      </p>
+    </div>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+

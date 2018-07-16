@@ -31,7 +31,7 @@
   <ng-template let-mat pTemplate="gridItem">
     <div style="padding:.5em" class="ui-g-12 ui-md-3">
       <p-panel [header]="mat.nombreMateria" [style]="{'text-align':'center'}">
-        <div class="car-detail">{{mat.codigoMateria}} - {{mat.numHorasXSemana}}</div>
+        <div class="car-detail">{{mat.codigoMateria}} - {{mat.numHorasXSemana}}hrs</div>
         <hr class="ui-widget-content" style="border-top:0">
         <button pButton type="button" icon="pi pi-search" (click)="escogerMateria(mat)" style="margin-top:0"></button>
       </p-panel>

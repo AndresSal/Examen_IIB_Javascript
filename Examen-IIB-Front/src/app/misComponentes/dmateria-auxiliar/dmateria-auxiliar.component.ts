@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dmateria-auxiliar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DMateriaAuxiliarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit() {
+  }
+
+  irACrearEstudiante(){
+    const url = ['/CrearEstudiante'];
+    this._router.navigate(url);
   }
 
 }

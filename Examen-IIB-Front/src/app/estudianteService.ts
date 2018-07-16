@@ -27,5 +27,10 @@ export class EstudianteService{
     return this._http.put<Estudiante[]>(nuevoURL,JSON.stringify(body));
   }
 
+  registrarNuevoEstudiante(body):Observable<Estudiante[]>{
+    return this._http.post<Estudiante[]>(this.URLListaEstudiantes,JSON.stringify(body));
+  }
+
+
 
 }

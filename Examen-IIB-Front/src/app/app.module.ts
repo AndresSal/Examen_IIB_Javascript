@@ -18,7 +18,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ButtonModule} from "primeng/button";
 import {CarouselModule, DataScrollerModule, InputTextModule} from "primeng/primeng";
 import {CardModule} from "primeng/card";
-import {MatButtonModule, MatCardModule, MatListModule} from "@angular/material";
+import {
+  MatButtonModule, MatCardModule, MatDatepickerModule, MatInputModule, MatListModule, MatNativeDateModule,
+  MatSelectModule
+} from "@angular/material";
 import { DetalleEstudianteComponent } from './misComponentes/detalle-estudiante/detalle-estudiante.component';
 import { DetalleMateriaComponent } from './misComponentes/detalle-materia/detalle-materia.component';
 import {DataViewModule} from "primeng/dataview";
@@ -37,8 +40,10 @@ import {OrderListModule} from 'primeng/orderlist';
 import { DMateriaAuxiliarComponent } from './misComponentes/dmateria-auxiliar/dmateria-auxiliar.component';
 import {PanelModule} from 'primeng/panel';
 import { ModalEstudianteComponent } from './misComponentes/modal-estudiante/modal-estudiante.component';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from "@angular/forms";
+import { CrearEstudianteComponent } from './misComponentes/crear-estudiante/crear-estudiante.component';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +64,8 @@ import {FormsModule} from "@angular/forms";
     MontoTotalComponent,
     DescripcionMateriaEscogidaComponent,
     DMateriaAuxiliarComponent,
-    ModalEstudianteComponent
+    ModalEstudianteComponent,
+    CrearEstudianteComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +92,13 @@ import {FormsModule} from "@angular/forms";
     DataScrollerModule,
     OrderListModule,
     PanelModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
     EstudianteService,
