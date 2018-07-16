@@ -37,6 +37,6 @@ export class MontoTotalComponent implements OnInit {
 
       })
   }
-  
+
 
 }

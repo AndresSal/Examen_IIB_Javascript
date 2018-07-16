@@ -31,18 +31,6 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
     (this._internalService.retornarEstudianteEscogido().idEstudiante)
       .subscribe(res =>{
         this.materiasDelEstudiante = <Materia[]>res;
-        let montoFinal=0;
-        if(typeof res != "undefined"){
-          res.forEach(mat =>
-          {
-            console.log('NombreMateria: ',<number>mat.numHorasXSemana);
-            montoFinal = montoFinal+mat.numHorasXSemana;
-
-          })
-        }
-        console.log('TOTAL NUMERO DE HORAS: ',montoFinal);
-        this._internalService.cargarMontoTotal(montoFinal);
-
       })
   }
 

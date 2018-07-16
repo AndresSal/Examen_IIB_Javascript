@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Estudiante} from "./Estudiante";
 import {Materia} from "./Materia";
+import {EstudianteService} from "./estudianteService";
+import {MateriaService} from "./materiaService";
 
 @Injectable()
 export class InternalService {
@@ -11,7 +13,7 @@ export class InternalService {
   contadorCarrito: number;
   montoTotal: number;
 
-  constructor(){}
+  constructor(private _materiaService: MateriaService){}
 
   cargarIDComponentePadre(id: number){
     this.IDComponentePadre = id;
@@ -25,7 +27,23 @@ export class InternalService {
   cargarEstudianteEscogido(estudiante: Estudiante){
     this.estudianteEscogido = estudiante;
     console.log('estudiante actual: ',this.estudianteEscogido);
-    this.contadorCarrito = 0;
+
+    this._materiaService.MateriasDeMiEstudiante
+    (this.estudianteEscogido.idEstudiante)
+      .subscribe(res =>{
+        let numItems=0;
+        if(typeof res != "undefined"){
+          res.forEach(mat =>
+          {
+            numItems++;
+            console.log('EL INTERNAL DICE: ahora tengo ',numItems,' items');
+
+          })
+        }
+        console.log('TOTAL NUMERO DE ITEMS: ',numItems);
+        this.contadorCarrito = numItems;
+
+      })
   }
 
   retornarEstudianteEscogido(){
@@ -42,11 +60,13 @@ export class InternalService {
   }
 
   aumentarContador(){
-    return ++this.contadorCarrito;
+    this.contadorCarrito = ++this.contadorCarrito;
+    console.log('EL INTERNAL dice que el contador aumento a ',this.contadorCarrito);
   }
 
   disminuirContador(){
-    return --this.contadorCarrito;
+    this.contadorCarrito = --this.contadorCarrito;
+    console.log('EL INTERNAL dice que el contador disminuyo a ',this.contadorCarrito);
   }
 
   retornarContador(){
