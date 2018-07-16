@@ -51,6 +51,13 @@ export class MateriaService {
     return this._http.get<Materia[]>(nuevoURL);
   }
 
+  MateriasDeMiEstudiante(fkEstudiante: number): Observable<any>{
+    let nuevoURL = this.URLMateriasDeUnEstudiante+fkEstudiante;
+    return this._http.get<Materia[]>(nuevoURL);
+  }
+
+
+
 
 
 }

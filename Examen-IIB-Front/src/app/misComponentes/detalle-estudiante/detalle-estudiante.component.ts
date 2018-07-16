@@ -130,10 +130,6 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
       }
     )
   }
-
-
-
-
   irAlHome (){
     const url = ['/Home/'];
     this._router.navigate(url);
