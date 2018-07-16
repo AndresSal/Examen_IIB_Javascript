@@ -79,6 +79,26 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
       semestreActual : this.inputSemestreActual
     };
 
+    this._estudianteService.consulta(
+      this._internalService.retornarEstudianteEscogido().idEstudiante
+    ).subscribe(
+      res =>{
+        res.find(registro =>{
+          let idRegistro = registro.id;
+          this._estudianteService.actualizarDetalleEstudiante(idRegistro,bodyDelUpdate)
+            .subscribe(
+              result =>{
+                console.log('BRAVO!! se actualizaron con exito los datos del estudiante!!!');
+                console.log('ahora mi estudiante tiene la siguiente info',result);
+                this.irAlHome();
+              }
+            )
+        })
+      }
+    )
+
+
+
     this._estudianteService.actualizarDetalleEstudiante(this.idEstudiante,bodyDelUpdate)
       .subscribe(
         res => {
