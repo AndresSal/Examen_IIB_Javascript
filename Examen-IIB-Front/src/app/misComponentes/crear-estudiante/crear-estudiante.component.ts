@@ -41,8 +41,6 @@ export class CrearEstudianteComponent implements OnInit {
               this.irAlHome();
             }
           )
-
-
         }
       )
     console.log('mi nuevo id es: ',this.nuevoid);

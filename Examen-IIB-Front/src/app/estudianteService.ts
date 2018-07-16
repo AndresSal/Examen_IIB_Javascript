@@ -22,6 +22,14 @@ export class EstudianteService{
     return this._http.get<Estudiante[]>(this.URLEstudianteEspecifico+id);
   }
 
+  consulta(id):Observable<any>{
+    return this._http.get<any>(this.URLEstudianteEspecifico+id);
+  }
+
+  eliminarEstudianteEscogido(idRegistro):Observable<any>{
+    return this._http.delete(this.URLListaEstudiantes+'/'+idRegistro);
+  }
+
   actualizarDetalleEstudiante(id, body):Observable<Estudiante[]>{
     let nuevoURL = this.URLListaEstudiantes+'/'+id;
     return this._http.put<Estudiante[]>(nuevoURL,JSON.stringify(body));
@@ -30,6 +38,8 @@ export class EstudianteService{
   registrarNuevoEstudiante(body):Observable<Estudiante[]>{
     return this._http.post<Estudiante[]>(this.URLListaEstudiantes,JSON.stringify(body));
   }
+
+
 
 
 
