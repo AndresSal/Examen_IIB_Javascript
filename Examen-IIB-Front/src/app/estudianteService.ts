@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Estudiante} from "./Estudiante";
-import {Observable} from "rxjs/index";
+import {Observable, of} from "rxjs/index";
 
 
 @Injectable(
@@ -37,6 +37,13 @@ export class EstudianteService{
 
   registrarNuevoEstudiante(body):Observable<Estudiante[]>{
     return this._http.post<Estudiante[]>(this.URLListaEstudiantes,JSON.stringify(body));
+  }
+
+  consultarEstudiantePorNombre(consulta:string):Observable<Estudiante[]>{
+    if(!consulta.trim()){
+      return of ([]);
+    }
+    return this._http.get<Estudiante[]>(this.URLListaEstudiantes+'/?nombreEstudiante='+consulta);
   }
 
 

@@ -44,6 +44,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from "@angular/forms";
 import { CrearEstudianteComponent } from './misComponentes/crear-estudiante/crear-estudiante.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { ResultadoBusquedaComponent } from './misComponentes/HomeComponents/resultado-busqueda/resultado-busqueda.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import {MatRadioModule} from '@angular/material/radio';
     DescripcionMateriaEscogidaComponent,
     DMateriaAuxiliarComponent,
     ModalEstudianteComponent,
-    CrearEstudianteComponent
+    CrearEstudianteComponent,
+    ResultadoBusquedaComponent
   ],
   imports: [
     BrowserModule,

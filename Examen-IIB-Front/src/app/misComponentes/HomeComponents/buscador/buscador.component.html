@@ -1,11 +1,29 @@
-<div class="ui-g ui-fluid">
+<div class="container">
 
   <div class="ui-g-12">
     <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="Busque por Modelo Papa o Modelo Hijo">
-      <button pButton type="button" label="Buscar"></button>
+      <form>
+        <input type="text" pInputText placeholder="Busque por Modelo Papa o Modelo Hijo" [(ngModel)]="inputConsulta" name="buscador">
+        <button pButton type="button" label="Buscar" (click)="efectuarConsulta()"></button>
+      </form>
     </div>
 
   </div>
+</div>
+
+<div class="container">
+<h4>Resultados de la búsqueda</h4>
+  <div class="contenido" *ngIf="resultadosBusqueda">
+    <mat-card *ngFor="let results of resultadosBusqueda">
+      <!--<p>-->
+        <!--{{results.nombreEstudiante}} - {{results.apellidoEstudiante}}-->
+      <!--</p>-->
+
+      <button pButton type="button" (click)="escogerEstudiante(results)" >
+        {{results.nombreEstudiante}} - {{results.apellidoEstudiante}}
+      </button>
+    </mat-card>
+  </div>
 
 </div>
+
