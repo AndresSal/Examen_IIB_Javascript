@@ -69,11 +69,13 @@ export class InternalService {
   aumentarContador(){
     this.contadorCarrito = ++this.contadorCarrito;
     console.log('EL INTERNAL dice que el contador aumento a ',this.contadorCarrito);
+    this.emitirContadorCarrito(this.contadorCarrito);
   }
 
   disminuirContador(){
     this.contadorCarrito = --this.contadorCarrito;
     console.log('EL INTERNAL dice que el contador disminuyo a ',this.contadorCarrito);
+    this.emitirContadorCarrito(this.contadorCarrito);
   }
 
   retornarContador(){
