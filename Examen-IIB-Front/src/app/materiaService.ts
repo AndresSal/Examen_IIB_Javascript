@@ -14,8 +14,8 @@ export class MateriaService {
   private URLMateriasDeUnEstudiante = 'http://localhost:1337/Materia/?estudianteFK=';
   constructor(private _http:HttpClient){}
 
-  consultarListaMaterias():Observable<Materia[]>{
-    return this._http.get<Materia[]>(this.URLListaMaterias);
+  consultarListaMaterias():Observable<any>{
+    return this._http.get<any>(this.URLListaMaterias);
   }
 
   consultarMateriaEspecifica(id):Observable<Materia>{

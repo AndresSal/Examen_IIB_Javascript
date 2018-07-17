@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Estudiante} from "./Estudiante";
 import {Observable, of} from "rxjs/index";
@@ -11,6 +11,7 @@ export class EstudianteService{
 
   private URLListaEstudiantes = 'http://localhost:1337/Estudiante';
   private URLEstudianteEspecifico = 'http://localhost:1337/Estudiante/?idEstudiante=';
+  contadorCarrito : EventEmitter<number> = new EventEmitter();
 
   constructor (private _http:HttpClient){}
 

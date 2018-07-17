@@ -14,8 +14,8 @@ export class CrearEstudianteComponent implements OnInit {
   inputNombreEstudiante:string;
   inputApellidoEstudiante:string;
   inputFechaNacimiento:string;
-  inputEsGraduado:boolean;
-  inputSemestreActual:number;
+  inputEsGraduado:string;
+  inputSemestreActual:string;
 
   nuevoid:number;
 
@@ -62,6 +62,14 @@ export class CrearEstudianteComponent implements OnInit {
   irAlHome(){
     const url = ['/Home'];
     this._router.navigate(url);
+  }
+
+  limpiar(){
+    this.inputNombreEstudiante = "";
+    this.inputApellidoEstudiante = "";
+    this.inputFechaNacimiento = "";
+    this.inputSemestreActual = "";
+    this.inputEsGraduado = "";
   }
 
 }

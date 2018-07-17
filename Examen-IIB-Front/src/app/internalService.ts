@@ -1,7 +1,6 @@
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {Estudiante} from "./Estudiante";
 import {Materia} from "./Materia";
-import {EstudianteService} from "./estudianteService";
 import {MateriaService} from "./materiaService";
 
 @Injectable()
@@ -10,10 +9,13 @@ export class InternalService {
   estudianteEscogido: Estudiante;
   materiaEscogida: Materia;
   IDComponentePadre: number;
-  contadorCarrito: number;
+  contadorCarrito:number;
+  emisorDelContador: EventEmitter <number> = new EventEmitter<number>();
   montoTotal: number;
 
-  constructor(private _materiaService: MateriaService){}
+  constructor(private _materiaService: MateriaService){
+    this.contadorCarrito = 0;
+  }
 
   cargarIDComponentePadre(id: number){
     this.IDComponentePadre = id;
@@ -41,10 +43,15 @@ export class InternalService {
           })
         }
         console.log('TOTAL NUMERO DE ITEMS: ',numItems);
-        this.contadorCarrito = numItems;
+        this.emitirContadorCarrito(numItems);
 
       })
   }
+
+  emitirContadorCarrito (numItems: number){
+    this.emisorDelContador.emit(numItems);
+  }
+
 
   retornarEstudianteEscogido(){
     return this.estudianteEscogido;

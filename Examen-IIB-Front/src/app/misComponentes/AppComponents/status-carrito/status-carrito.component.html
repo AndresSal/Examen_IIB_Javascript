@@ -3,11 +3,18 @@
 
 <!--</div>-->
 
+<!--<button (click)="irAlCarrito()">-->
+  <!--Carrito <i class="material-icons">-->
+  <!--shopping_cart-->
+<!--</i>-->
+  <!--numero Items: {{numItems}}-->
+<!--</button>-->
 
 <div class="container" (click)="irAlCarrito()">
-  <h3>Carrito</h3>
-  {{numItems}}
+  <mat-icon matBadge={{numItems}} matBadgeColor="warn">shopping_cart</mat-icon>
 </div>
+
+
 
 
 

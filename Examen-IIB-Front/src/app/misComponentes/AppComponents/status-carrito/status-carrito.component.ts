@@ -11,7 +11,7 @@ import {Estudiante} from "../../../Estudiante";
 })
 export class StatusCarritoComponent implements OnInit, OnChanges {
 
-  @Input() numItems:number;
+   numItems:number;
   constructor(private _router: Router,
               private _estudianteService: EstudianteService,
               private _internalService: InternalService) { }
@@ -32,6 +32,12 @@ export class StatusCarritoComponent implements OnInit, OnChanges {
   }
 
   obtenerNumeroItemsEnElCarrito(){
-    this.numItems = this._internalService.retornarContador();
+    this._internalService
+      .emisorDelContador.subscribe(
+        res => {
+          this.numItems = res;
+        }
+      )
+    console.log('el numero de contador es: ',this.numItems);
   }
 }

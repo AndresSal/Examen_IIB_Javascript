@@ -32,7 +32,21 @@ export class PreviewHijoComponent implements OnInit {
 
   obtenerListaMaterias(){
     this._materiaService.consultarListaMaterias()
-      .subscribe(res => this.materias = <Materia[]>res)
+      .subscribe(res =>
+      {
+
+        console.log("LAS MATERIAS SON LAS SIGUIENTES",res);
+        this.materias = res;
+        // this.materias = res.map(
+        //   (materia: Materia) => {
+        //      if(materia.esDisponible===true)
+        //      {
+        //       return materia;
+        //      }
+        //   }
+        // )
+
+      })
   }
 
   escogerMateria(materia: Materia) {

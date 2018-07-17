@@ -45,6 +45,7 @@ import {FormsModule} from "@angular/forms";
 import { CrearEstudianteComponent } from './misComponentes/crear-estudiante/crear-estudiante.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { ResultadoBusquedaComponent } from './misComponentes/HomeComponents/resultado-busqueda/resultado-busqueda.component';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +101,8 @@ import { ResultadoBusquedaComponent } from './misComponentes/HomeComponents/resu
     MatRadioModule,
     MatSelectModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatBadgeModule
   ],
   providers: [
     EstudianteService,

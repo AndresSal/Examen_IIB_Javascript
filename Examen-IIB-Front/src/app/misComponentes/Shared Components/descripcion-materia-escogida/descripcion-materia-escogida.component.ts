@@ -44,6 +44,7 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
     )
   }
 
+
   irAlHome (){
     const url = ['/Home/'];
     this._router.navigate(url);
