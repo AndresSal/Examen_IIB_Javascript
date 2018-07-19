@@ -18,6 +18,7 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
 
   constructor(private _materiaService:MateriaService,
               private _internalService: InternalService,
+              private _estudianteService: EstudianteService,
               private _router: Router) { }
 
   ngOnInit() {
@@ -25,15 +26,35 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
   }
 
 
-
   consultarListaDeMaterias(){
-    this._materiaService.MateriasDeMiEstudiante
-    (this._internalService.retornarEstudianteEscogido().idEstudiante)
-      .subscribe(res =>{
-        console.log('mi estudiante es: ',res);
-        this.materiasDelEstudiante = <Materia[]>res;
-      })
+    this._estudianteService.consulta(this._internalService
+      .retornarEstudianteEscogido().idEstudiante).subscribe(
+        res => {
+          res.find(estudiante =>{
+            let idRegistroEstudiante = estudiante.id;
+            console.log('el id del registro es: ',idRegistroEstudiante);
+            this._materiaService.MateriasDeMiEstudiante
+            (idRegistroEstudiante).subscribe(
+              respuesta => {
+                console.log('las materias son: ',respuesta);
+                this.materiasDelEstudiante = <Materia[]>respuesta;
+              }
+            )
+          })
+        }
+    )
   }
+
+
+
+  // consultarListaDeMaterias(){
+  //   this._materiaService.MateriasDeMiEstudiante
+  //   (this._internalService.retornarEstudianteEscogido().idEstudiante)
+  //     .subscribe(res =>{
+  //       console.log('mi estudiante es: ',res);
+  //       this.materiasDelEstudiante = <Materia[]>res;
+  //     })
+  // }
 
   eliminarMateriaDeMiCarrito(materia: Materia){
     this._materiaService.quitarMateriaDelEstudiante(materia.idMateria).subscribe(

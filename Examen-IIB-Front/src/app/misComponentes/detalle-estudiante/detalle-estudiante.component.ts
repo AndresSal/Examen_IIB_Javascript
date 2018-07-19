@@ -112,28 +112,6 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
       )
   }
 
-  eliminarAMiEstudiante(){
-    this._estudianteService.consulta(
-      this._internalService.retornarEstudianteEscogido().idEstudiante
-    ).subscribe(
-      res => {
-        console.log('RESULTADOS DE LA CONSULTA: ',res);
-        res.find(registro => {
-          let idRegistro = registro.id;
-          console.log('el ID de ese registro es: ',idRegistro);
-          this._estudianteService.eliminarEstudianteEscogido(idRegistro)
-            .subscribe(
-              respuesta => {
-                console.log('CORRECTO!! se ha eliminado el estudiante escogido');
-                console.log('resultado de la operación: ',respuesta);
-                this.irAlHome();
-              }
-            )
-        })
-      }
-    )
-  }
-
   eliminarEstudiante(){
     this._estudianteService.consulta(
       this._internalService.retornarEstudianteEscogido().idEstudiante
@@ -151,30 +129,20 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
                     console.log('que recibi: ',respuesta);
                   }
                 )
+              let idRegistro = estudiante.id;
+              console.log('el id de ese registro es: ', idRegistro);
+              this._estudianteService.eliminarEstudianteEscogido(idRegistro)
+                .subscribe(
+                  resultado => {
+                    console.log('CORRECTO!! se ha eliminado el estudiante escogido');
+                    console.log('resultado de la operación: ',resultado);
+                    this._internalService.setearContador();
+                    this._internalService.setearEstudiante();
+                    this.irAlHome();
+                  }
+                )
             }
           )
-
-          // let idRegistro = estudiante.id;
-          // console.log('el ID de ese registro es: ',idRegistro);
-          // this._estudianteService.eliminarEstudianteEscogido(idRegistro)
-          //   .subscribe(
-          //     respuesta => {
-          //       console.log('CORRECTO!! se ha eliminado el estudiante escogido');
-          //       console.log('resultado de la operación: ',respuesta);
-          //       let nuevoid = 0;
-          //       this._internalService.setearContador();
-          //       this._internalService.setearEstudiante();
-          //       this.irAlHome();
-          //     }
-          //   )
-
-
-          // this._materiaService.eliminarMateriasDelEstudiante(materiasEstudiante)
-          //   .subscribe(
-          //     res =>{
-          //       console.log('que es lo que recibo, ',res);
-          //     }
-          //   )
         })
       }
     )
