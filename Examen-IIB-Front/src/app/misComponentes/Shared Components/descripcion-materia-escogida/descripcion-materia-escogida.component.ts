@@ -30,6 +30,7 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
     this._materiaService.MateriasDeMiEstudiante
     (this._internalService.retornarEstudianteEscogido().idEstudiante)
       .subscribe(res =>{
+        console.log('mi estudiante es: ',res);
         this.materiasDelEstudiante = <Materia[]>res;
       })
   }

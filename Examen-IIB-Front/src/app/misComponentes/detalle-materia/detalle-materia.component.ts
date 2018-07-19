@@ -3,6 +3,7 @@ import {MateriaService} from "../../materiaService";
 import {Materia} from "../../Materia";
 import {InternalService} from "../../internalService";
 import {Router} from "@angular/router";
+import {EstudianteService} from "../../estudianteService";
 
 @Component({
   selector: 'app-detalle-materia',
@@ -19,7 +20,8 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
   esSeleccionable = true;
   constructor(private _materiaService: MateriaService,
               private _internarlService: InternalService,
-              private _router: Router) { }
+              private _router: Router,
+              private _estudianteService: EstudianteService) { }
 
   ngOnInit() {
     //console.log('Estoy en el detalle Materia: la materia que extraje es: ',this._internarlService.retornarMateriaEscogida());
@@ -57,11 +59,45 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
           console.log('Bien Hemos hecho el cambio');
           this.listaMateriaEscogida = <Materia[]>res;
           console.log('la materia ahora tiene: ',this.listaMateriaEscogida);
-          this._internarlService.aumentarContador();
-          this.irAlHome();
         }
       )
   }
+
+
+  aumentarMateria(){
+    this._estudianteService.consulta(this._internarlService.
+    retornarEstudianteEscogido().idEstudiante)
+      .subscribe(
+        res =>{
+          console.log('RESPUESTA DEL SERVIDOR, ',res);
+          res.find(registroEstudiante =>{
+            let idRegistroEstudiante= registroEstudiante.id;
+
+            this._materiaService.consultarMateriaEspecifica(this._internarlService.retornarMateriaEscogida().idMateria)
+              .subscribe(
+                resMateria =>{
+                  console.log('RESPUESTA A CONSULTA MATERIA: ',resMateria);
+                  resMateria.find(registroMateria =>
+                      {
+                        console.log('el id del registro Estudiante es: ',idRegistroEstudiante);
+                        let idRegistroMateria = registroMateria.id;
+                        console.log('el id del registro Materia es: ',idRegistroMateria);
+                        this._materiaService.vincularMateriaConEstudiante(idRegistroMateria,idRegistroEstudiante)
+                          .subscribe(
+                            resultado => {
+                              console.log('esto es lo que hago a continuación: ',resultado);
+                              this._internarlService.aumentarContador();
+                              this.irAlHome();
+                            }
+                          )
+                      })
+                }
+              )
+          })
+        }
+      )
+  }
+
 
   verificarEstadoMateria(){
     this.obtenerIDDeMiComponentePadre();

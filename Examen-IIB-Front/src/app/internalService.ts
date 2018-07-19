@@ -28,6 +28,7 @@ export class InternalService {
 
   cargarEstudianteEscogido(estudiante: Estudiante){
     this.estudianteEscogido = estudiante;
+    this.contadorCarrito = 0;
     console.log('estudiante actual: ',this.estudianteEscogido);
 
     this._materiaService.MateriasDeMiEstudiante
@@ -37,13 +38,14 @@ export class InternalService {
         if(typeof res != "undefined"){
           res.forEach(mat =>
           {
-            numItems++;
+            // numItems++;
+            this.contadorCarrito++;
             console.log('EL INTERNAL DICE: ahora tengo ',numItems,' items');
 
           })
         }
-        console.log('TOTAL NUMERO DE ITEMS: ',numItems);
-        this.emitirContadorCarrito(numItems);
+        // console.log('TOTAL NUMERO DE ITEMS: ',numItems);
+        this.emitirContadorCarrito(this.contadorCarrito);
 
       })
   }
@@ -68,14 +70,22 @@ export class InternalService {
 
   aumentarContador(){
     this.contadorCarrito = ++this.contadorCarrito;
-    console.log('EL INTERNAL dice que el contador aumento a ',this.contadorCarrito);
+    // console.log('EL INTERNAL dice que el contador aumento a ',this.contadorCarrito);
     this.emitirContadorCarrito(this.contadorCarrito);
   }
 
   disminuirContador(){
     this.contadorCarrito = --this.contadorCarrito;
-    console.log('EL INTERNAL dice que el contador disminuyo a ',this.contadorCarrito);
+    // console.log('EL INTERNAL dice que el contador disminuyo a ',this.contadorCarrito);
     this.emitirContadorCarrito(this.contadorCarrito);
+  }
+
+  setearContador(){
+    this.contadorCarrito = 0;
+  }
+
+  setearEstudiante(){
+    this.estudianteEscogido = null;
   }
 
   retornarContador(){

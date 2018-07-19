@@ -4,6 +4,7 @@ import {EstudianteService} from "../../estudianteService";
 import {InternalService} from "../../internalService";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
+import {MateriaService} from "../../materiaService";
 
 
 
@@ -30,8 +31,10 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
 
   constructor(private _estudianteService:EstudianteService,
               private _internalService:InternalService,
+              private _materiaService: MateriaService,
               private modalService: NgbModal,
-              private _router:Router) {
+              private _router:Router,
+              ) {
     this.myID = 2;
   }
 
@@ -130,6 +133,57 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
       }
     )
   }
+
+  eliminarEstudiante(){
+    this._estudianteService.consulta(
+      this._internalService.retornarEstudianteEscogido().idEstudiante
+    ).subscribe(
+      res => {
+        console.log('resultado de la consulta: ',res);
+        res.find(estudiante =>{
+          let materiasEstudiante = estudiante.materiasEstudiante;
+          console.log('la lista de materias que tiene es: ',materiasEstudiante);
+          materiasEstudiante.forEach(
+            materia=> {
+              this._materiaService.eliminarMateriasDelEstudiante(materia)
+                .subscribe(
+                  respuesta =>{
+                    console.log('que recibi: ',respuesta);
+                  }
+                )
+            }
+          )
+
+          // let idRegistro = estudiante.id;
+          // console.log('el ID de ese registro es: ',idRegistro);
+          // this._estudianteService.eliminarEstudianteEscogido(idRegistro)
+          //   .subscribe(
+          //     respuesta => {
+          //       console.log('CORRECTO!! se ha eliminado el estudiante escogido');
+          //       console.log('resultado de la operación: ',respuesta);
+          //       let nuevoid = 0;
+          //       this._internalService.setearContador();
+          //       this._internalService.setearEstudiante();
+          //       this.irAlHome();
+          //     }
+          //   )
+
+
+          // this._materiaService.eliminarMateriasDelEstudiante(materiasEstudiante)
+          //   .subscribe(
+          //     res =>{
+          //       console.log('que es lo que recibo, ',res);
+          //     }
+          //   )
+        })
+      }
+    )
+  }
+
+
+
+
+
   irAlHome (){
     const url = ['/Home/'];
     this._router.navigate(url);
