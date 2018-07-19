@@ -10,12 +10,17 @@ import {Observable} from "rxjs/index";
 export class MateriaService {
 
   private URLListaMaterias = 'http://localhost:1337/Materia';
+  private URLMateriasDisponibles = 'http://localhost:1337/Materia/?esDisponible=true';
   private URLMateriaEspecifica = 'http://localhost:1337/Materia/?idMateria=';
   private URLMateriasDeUnEstudiante = 'http://localhost:1337/Materia/?estudianteFK=';
   constructor(private _http:HttpClient){}
 
   consultarListaMaterias():Observable<any>{
     return this._http.get<any>(this.URLListaMaterias);
+  }
+
+  consultarMateriasDisponibles():Observable <any>{
+    return this._http.get<any>(this.URLMateriasDisponibles);
   }
 
   consultarMateriaEspecifica(id):Observable<Materia>{

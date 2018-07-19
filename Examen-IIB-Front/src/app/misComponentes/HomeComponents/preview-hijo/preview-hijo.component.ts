@@ -31,7 +31,7 @@ export class PreviewHijoComponent implements OnInit {
   }
 
   obtenerListaMaterias(){
-    this._materiaService.consultarListaMaterias()
+    this._materiaService.consultarMateriasDisponibles()
       .subscribe(res =>
       {
 
