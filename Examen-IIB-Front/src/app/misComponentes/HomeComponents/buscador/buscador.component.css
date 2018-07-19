@@ -1,4 +1,25 @@
-.sa-tamanio-buscador {
-  width: 100%;
-  height: auto;
+.sa-input-buscador {
+  margin: auto;
+  width: 80%;
+  border: 3px solid brown;
+  padding: 10px;
+}
+
+.sa-input-buscador form {
+  width: auto;
+  padding: 10px;
+}
+
+.sa-input-buscador form input {
+  width: 92%;
+  border: 3px solid chocolate;
+}
+
+.sa-input-buscador form button {
+  display: block;
+  float: right;
+  text-align: center;
+  width: 80px;
+  heigth: 80px;
+
 }

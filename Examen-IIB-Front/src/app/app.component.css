@@ -28,18 +28,3 @@
   padding: 10px;
 }
 
-
-.sa-topnav col-sm-3 {
-  float: right;
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-
-.sa-topnav col-sm-3:hover {
-  background-color: #118798;
-  color: black;
-}

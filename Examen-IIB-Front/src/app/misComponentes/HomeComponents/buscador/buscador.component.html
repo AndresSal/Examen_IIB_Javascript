@@ -1,9 +1,6 @@
   <div class="ui-g-12">
-    <div class="ui-inputgroup" style="{
-     text-align: center;
-     width: 100%;
-     }">
-      <form style="{text-align: center;width: 100%}">
+    <div class="sa-input-buscador">
+      <form>
         <input type="text" pInputText placeholder="Busque Estudiante por nombre" [(ngModel)]="inputConsulta" name="buscador">
         <button pButton type="button" label="Buscar" (click)="efectuarConsulta()"></button>
       </form>
