@@ -33,7 +33,7 @@ export class CrearEstudianteComponent implements OnInit {
           let cont = Object.keys(res).length;
           console.log('numero de elementos: ',cont);
           this._estudianteService.registrarNuevoEstudiante(
-            this.construirElBodyDelRequest(cont+1)).
+            this.construirElBodyDelRequest(cont)).
           subscribe(
             res => {
               console.log('MUY BIEN!! se ha creado un nuevo estudiante');

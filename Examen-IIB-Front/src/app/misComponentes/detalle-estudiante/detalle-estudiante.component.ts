@@ -129,20 +129,20 @@ export class DetalleEstudianteComponent implements OnInit, OnChanges {
                     console.log('que recibi: ',respuesta);
                   }
                 )
-              let idRegistro = estudiante.id;
-              console.log('el id de ese registro es: ', idRegistro);
-              this._estudianteService.eliminarEstudianteEscogido(idRegistro)
-                .subscribe(
-                  resultado => {
-                    console.log('CORRECTO!! se ha eliminado el estudiante escogido');
-                    console.log('resultado de la operación: ',resultado);
-                    this._internalService.setearContador();
-                    this._internalService.setearEstudiante();
-                    this.irAlHome();
-                  }
-                )
             }
           )
+          let idRegistro = estudiante.id;
+          console.log('el id de ese registro es: ', idRegistro);
+          this._estudianteService.eliminarEstudianteEscogido(idRegistro)
+            .subscribe(
+              resultado => {
+                console.log('CORRECTO!! se ha eliminado el estudiante escogido');
+                console.log('resultado de la operación: ',resultado);
+                this._internalService.setearContador();
+                this._internalService.setearEstudiante();
+                this.irAlHome();
+              }
+            )
         })
       }
     )

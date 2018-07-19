@@ -25,7 +25,6 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
     this.consultarListaDeMaterias();
   }
 
-
   consultarListaDeMaterias(){
     this._estudianteService.consulta(this._internalService
       .retornarEstudianteEscogido().idEstudiante).subscribe(
@@ -45,17 +44,6 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
     )
   }
 
-
-
-  // consultarListaDeMaterias(){
-  //   this._materiaService.MateriasDeMiEstudiante
-  //   (this._internalService.retornarEstudianteEscogido().idEstudiante)
-  //     .subscribe(res =>{
-  //       console.log('mi estudiante es: ',res);
-  //       this.materiasDelEstudiante = <Materia[]>res;
-  //     })
-  // }
-
   eliminarMateriaDeMiCarrito(materia: Materia){
     this._materiaService.quitarMateriaDelEstudiante(materia.idMateria).subscribe(
         res =>{
@@ -65,7 +53,6 @@ export class DescripcionMateriaEscogidaComponent implements OnInit {
         }
     )
   }
-
 
   irAlHome (){
     const url = ['/Home/'];
