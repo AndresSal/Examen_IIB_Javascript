@@ -39,15 +39,6 @@ export class MateriaService {
     return this._http.get<Materia[]>(this.URLMateriaEspecifica+id);
   }
 
-  asociarMateriaConEstudiante(idMateria: number, idEstudiante:number): Observable<Materia[]>{
-    let nuevoID= idMateria+10;
-    let nuevoURL = this.URLListaMaterias+'/'+nuevoID;
-    let cuerpoDeCambios = {
-      esDisponible: false,
-      estudianteFK : idEstudiante
-    };
-    return this._http.put<Materia[]>(nuevoURL,JSON.stringify(cuerpoDeCambios));
-  }
 
 
 
@@ -84,7 +75,7 @@ export class MateriaService {
 
   MateriasDeMiEstudiante(fkEstudiante: number): Observable<any>{
     let nuevoURL = this.URLMateriasDeUnEstudiante+fkEstudiante;
-    return this._http.get<Materia[]>(nuevoURL);
+    return this._http.get<any>(nuevoURL);
   }
 
 

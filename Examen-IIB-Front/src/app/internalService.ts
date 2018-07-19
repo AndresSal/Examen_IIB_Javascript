@@ -2,6 +2,7 @@ import {EventEmitter, Injectable} from "@angular/core";
 import {Estudiante} from "./Estudiante";
 import {Materia} from "./Materia";
 import {MateriaService} from "./materiaService";
+import {EstudianteService} from "./estudianteService";
 
 @Injectable()
 export class InternalService {
@@ -13,7 +14,8 @@ export class InternalService {
   emisorDelContador: EventEmitter <number> = new EventEmitter<number>();
   montoTotal: number;
 
-  constructor(private _materiaService: MateriaService){
+  constructor(private _materiaService: MateriaService,
+              private _estudianteService: EstudianteService){
     this.contadorCarrito = 0;
   }
 
@@ -31,23 +33,32 @@ export class InternalService {
     this.contadorCarrito = 0;
     console.log('estudiante actual: ',this.estudianteEscogido);
 
-    this._materiaService.MateriasDeMiEstudiante
-    (this.estudianteEscogido.idEstudiante)
-      .subscribe(res =>{
-        let numItems=0;
-        if(typeof res != "undefined"){
-          res.forEach(mat =>
-          {
-            // numItems++;
-            this.contadorCarrito++;
-            console.log('EL INTERNAL DICE: ahora tengo ',numItems,' items');
+    this._estudianteService.consulta(
+      this.retornarEstudianteEscogido().idEstudiante)
+      .subscribe(
+        res => {
+          res.find(estudiante =>{
+            let idRegistroEstudiante = estudiante.id;
+            this._materiaService.MateriasDeMiEstudiante(idRegistroEstudiante)
+              .subscribe(
+                respuesta =>{
+                  let numItems=0;
+                  if(typeof respuesta != "undefined"){
+                    respuesta.forEach(mat =>
+                    {
+                      // numItems++;
+                      this.contadorCarrito++;
+                      console.log('EL INTERNAL DICE: ahora tengo ',numItems,' items');
 
+                    })
+                  }
+                  // console.log('TOTAL NUMERO DE ITEMS: ',numItems);
+                  this.emitirContadorCarrito(this.contadorCarrito);
+                }
+              )
           })
         }
-        // console.log('TOTAL NUMERO DE ITEMS: ',numItems);
-        this.emitirContadorCarrito(this.contadorCarrito);
-
-      })
+      )
   }
 
   emitirContadorCarrito (numItems: number){

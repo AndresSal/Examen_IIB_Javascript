@@ -36,33 +36,14 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
   }
 
   obtenerIDMateriaSeleccionada(){
-
     this.idMateria = this._internarlService.retornarMateriaEscogida().idMateria;
     //console.log('Estoy en el Detalle Materia. Ahora tengo el idMateria de la materia: ',this.idMateria);
-
   }
 
   obtenerIDDeMiComponentePadre(){
     this.IDComponentePadre = this._internarlService.retornarIDComponentePadre();
     //console.log('recibi el ID del componente padre: ',this.IDComponentePadre);
   }
-
-  obtenerIDEstudianteSeleccionado(){
-    this.idEstudiante = this._internarlService.retornarEstudianteEscogido().idEstudiante;
-  }
-
-  actualizarMateriaEscogida(){
-    this.obtenerIDEstudianteSeleccionado();
-    this._materiaService.asociarMateriaConEstudiante(this.idMateria,this.idEstudiante)
-      .subscribe(
-        res => {
-          console.log('Bien Hemos hecho el cambio');
-          this.listaMateriaEscogida = <Materia[]>res;
-          console.log('la materia ahora tiene: ',this.listaMateriaEscogida);
-        }
-      )
-  }
-
 
   aumentarMateria(){
     this._estudianteService.consulta(this._internarlService.
@@ -108,12 +89,10 @@ export class DetalleMateriaComponent implements OnInit, OnChanges {
     }
   }
 
-
   irAlHome (){
     const url = ['/Home/'];
     this._router.navigate(url);
   }
-
 
   obtenerMateriaEscogida(){
     this._materiaService.arregloConEstudianteBuscado(
