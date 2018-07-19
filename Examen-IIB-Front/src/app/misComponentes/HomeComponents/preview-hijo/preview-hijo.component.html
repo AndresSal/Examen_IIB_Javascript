@@ -9,29 +9,6 @@
   <p-footer>
     <h6 style="text-align: right">Escoga de la lista</h6>
   </p-footer>
-  <ng-template let-mat pTemplate="listItem">
-    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
-      <div class="ui-g-12 ui-md-8">
-        <div class="ui-g">
-          <div class="ui-g-2 ui-sm-6">Nombre: </div>
-          <div class="ui-g-10 ui-sm-6"><b>{{mat.nombreMateria}}</b></div>
-
-          <div class="ui-g-2 ui-sm-6">Codigo: </div>
-          <div class="ui-g-10 ui-sm-6"><b>{{mat.codigoMateria}}</b></div>
-
-          <div class="ui-g-2 ui-sm-6">Número Horas: </div>
-          <div class="ui-g-10 ui-sm-6"><b>{{mat.numHorasXSemana}}</b></div>
-
-          <div class="ui-g-2 ui-sm-6">Es Disponible: </div>
-          <div class="ui-g-10 ui-sm-6"><b>{{mat.esDisponible}}</b></div>
-
-        </div>
-      </div>
-      <div class="ui-g-12 ui-md-1 search-icon">
-        <button pButton type="button" icon="pi pi-search" (click)="escogerMateria(mat)"></button>
-      </div>
-    </div>
-  </ng-template>
   <ng-template let-mat pTemplate="gridItem">
     <div style="padding:.5em" class="ui-g-12 ui-md-3">
       <p-panel [header]="mat.nombreMateria" [style]="{'text-align':'center'}">
@@ -39,6 +16,31 @@
         <hr class="ui-widget-content" style="border-top:0">
         <button pButton type="button" icon="pi pi-search" (click)="escogerMateria(mat)" style="margin-top:0"></button>
       </p-panel>
+    </div>
+  </ng-template>
+  <ng-template let-mat pTemplate="listItem">
+    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+      <div class="ui-g-12 ui-md-8">
+        <div class="ui-g">
+          <div class="ui-g-6 ui-sm-6"><h3>Nombre:</h3></div>
+          <div class="ui-g-6 ui-sm-6" style="text-align: center"><b><h4>{{mat.nombreMateria}}</h4></b></div>
+
+          <div class="ui-g-6 ui-sm-6"><h3>Codigo:</h3></div>
+          <div class="ui-g-6 ui-sm-6" style="text-align: center"><b><h4>{{mat.codigoMateria}}</h4></b></div>
+
+          <div class="ui-g-6 ui-sm-6"><h3>Número Horas:</h3></div>
+          <div class="ui-g-6 ui-sm-6" style="text-align: center"><b><h4>{{mat.numHorasXSemana}}</h4></b></div>
+
+          <!--<div class="ui-g-2 ui-sm-6">Es Disponible: </div>-->
+          <!--<div class="ui-g-10 ui-sm-6"><b>{{mat.esDisponible}}</b></div>-->
+
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4 search-icon">
+        <button pButton type="button"  style="text-align:center; width: 60%; height:60%; margin-top: 30px; float: right;" (click)="escogerMateria(mat)">
+          <mat-icon style="width: 60%; height: 60%; text-align: center; margin-top: 25px"><h1>info</h1></mat-icon>
+        </button>
+      </div>
     </div>
   </ng-template>
 </p-dataView>

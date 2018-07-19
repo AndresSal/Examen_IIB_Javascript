@@ -3,31 +3,31 @@
 <p-carousel headerText="Lista de estudiantes registrados" [value]="misEstudiantes" [numVisible]="3">
   <ng-template let-estudiante pTemplate="item" >
     <div class="ui-grid ui-grid-responsive">
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><img [src]="estudiante.fotoEstudiante" alt="Photo of a Shiba Inu" width="60"></div>
+      <div class="ui-grid-row" style="text-align: center; margin-top: auto">
+        <div class="ui-grid-col-12"><img [src]="estudiante.fotoEstudiante" alt="Photo of a Shiba Inu" width="80" align="center"></div>
       </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-6">Nombre</div>
+      <div class="ui-grid-row" style="text-align: center">
+        <div class="ui-grid-col-6">Nombre:</div>
         <div class="ui-grid-col-6">{{estudiante.nombreEstudiante}}</div>
       </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-6">Apellido</div>
+      <div class="ui-grid-row" style="text-align: center">
+        <div class="ui-grid-col-6">Apellido:</div>
         <div class="ui-grid-col-6">{{estudiante.apellidoEstudiante}}</div>
       </div>
+      <!--<div class="ui-grid-row" style="text-align: center">-->
+        <!--<div class="ui-grid-col-6"><h6>Fecha de Nacimiento:</h6></div>-->
+        <!--<div class="ui-grid-col-6">{{estudiante.fechaNacimiento}}</div>-->
+      <!--</div>-->
+      <!--<div class="ui-grid-row" style="text-align: center">-->
+        <!--<div class="ui-grid-col-6">Es Graduado:</div>-->
+        <!--<div class="ui-grid-col-6">{{estudiante.esGraduado}}</div>-->
+      <!--</div>-->
+      <!--<div class="ui-grid-row" style="text-align: center">-->
+        <!--<div class="ui-grid-col-6"><h6>Semestre Actual:</h6></div>-->
+        <!--<div class="ui-grid-col-6">{{estudiante.semestreActual}}</div>-->
+      <!--</div>-->
       <div class="ui-grid-row">
-        <div class="ui-grid-col-6">Fecha de Nacimiento</div>
-        <div class="ui-grid-col-6">{{estudiante.fechaNacimiento}}</div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-6">Es Graduado</div>
-        <div class="ui-grid-col-6">{{estudiante.esGraduado}}</div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-6">Semestre Actual</div>
-        <div class="ui-grid-col-6">{{estudiante.semestreActual}}</div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12">
+        <div class="ui-grid-col-12" style="text-align: center">
           <button type="button" pButton icon="pi pi-search" (click)="escogerEstudiante(estudiante)"></button>
         </div>
       </div>
