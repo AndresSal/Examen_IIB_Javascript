@@ -17,6 +17,18 @@
   color: black;
 }
 
+.content {
+  background-color: #e4f0f1;
+  padding: 10px;
+}
+
+.footer{
+  background-color: #0e6471;
+  color:#ffffff;
+  padding: 10px;
+}
+
+
 .sa-topnav col-sm-3 {
   float: right;
   display: block;
