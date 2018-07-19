@@ -1,0 +1,33 @@
+.sa-topnav {
+  overflow: hidden;
+  background-color: #0e6471;
+}
+
+.sa-topnav a{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.sa-topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.sa-topnav col-sm-3 {
+  float: right;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.sa-topnav col-sm-3:hover {
+  background-color: #118798;
+  color: black;
+}
