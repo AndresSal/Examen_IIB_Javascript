@@ -1,28 +1,23 @@
-  <div class="ui-g-12">
-    <div class="sa-input-buscador">
-      <form>
-        <input type="text" pInputText placeholder="Busque Estudiante por nombre" [(ngModel)]="inputConsulta" name="buscador">
-        <button pButton type="button" label="Buscar" (click)="efectuarConsulta()"></button>
-      </form>
-    </div>
-
+  <div class="sa-input-buscador">
+    <form>
+      <input type="text" pInputText placeholder="Busque Estudiante por nombre" [(ngModel)]="inputConsulta" name="buscador">
+      <button pButton type="button" label="Buscar" (click)="efectuarConsulta()"></button>
+    </form>
   </div>
 
 
-<div class="container">
+
+<div class="sa-resultados-busqueda">
 
   <div class="contenido" *ngIf="resultadosBusqueda">
     <h4>Resultados de la búsqueda</h4>
     <mat-card>
-      <!--<p>-->
-        <!--{{results.nombreEstudiante}} - {{results.apellidoEstudiante}}-->
-      <!--</p>-->
-
-      <button pButton *ngFor="let results of resultadosBusqueda" type="button" (click)="escogerEstudiante(results)" >
-        {{results.nombreEstudiante}} - {{results.apellidoEstudiante}}
+      <button pButton *ngFor="let results of resultadosBusqueda" type="button" style="width: 10%; text-align: center;" (click)="escogerEstudiante(results)" >
+           {{results.nombreEstudiante}}
+        <br>
+           {{results.apellidoEstudiante}}
       </button>
     </mat-card>
   </div>
-
 </div>
 

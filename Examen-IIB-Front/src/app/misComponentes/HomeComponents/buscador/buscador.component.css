@@ -1,12 +1,13 @@
 .sa-input-buscador {
   margin: auto;
-  width: 80%;
+  width: 90%;
   border: 3px solid brown;
   padding: 10px;
 }
 
 .sa-input-buscador form {
   width: auto;
+  border: 3px solid #73AD21;
   padding: 10px;
 }
 
@@ -23,3 +24,17 @@
   heigth: 80px;
 
 }
+
+.sa-resultados-busqueda {
+  margin: auto;
+  width: 90%;
+  border: 3px solid brown;
+  padding: 10px;
+}
+
+/*.sa-resultados-busqueda mat-card {*/
+  /*background-color: #001c20;*/
+/*}*/
+
+
+

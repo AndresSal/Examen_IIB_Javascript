@@ -4,3 +4,17 @@
   border: 3px solid #73AD21;
   padding: 10px;
 }
+
+.sa-contenedor-Preview-Padre {
+  margin: auto;
+  width: 90%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+.sa-contenedor-Preview-Hijo {
+  margin: auto;
+  width: 90%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
