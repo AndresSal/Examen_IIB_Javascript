@@ -10,7 +10,7 @@ export class InternalService {
   estudianteEscogido: Estudiante;
   materiaEscogida: Materia;
   IDComponentePadre: number;
-  contadorCarrito:number;
+  contadorCarrito = 0;
   emisorDelContador: EventEmitter <number> = new EventEmitter<number>();
   montoTotal: number;
 
@@ -93,6 +93,7 @@ export class InternalService {
 
   setearContador(){
     this.contadorCarrito = 0;
+    this.emitirContadorCarrito(this.contadorCarrito);
   }
 
   setearEstudiante(){

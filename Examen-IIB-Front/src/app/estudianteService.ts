@@ -11,7 +11,7 @@ export class EstudianteService{
 
   private URLListaEstudiantes = 'http://localhost:1337/Estudiante';
   private URLEstudianteEspecifico = 'http://localhost:1337/Estudiante/?idEstudiante=';
-  contadorCarrito : EventEmitter<number> = new EventEmitter();
+
 
   constructor (private _http:HttpClient){}
 

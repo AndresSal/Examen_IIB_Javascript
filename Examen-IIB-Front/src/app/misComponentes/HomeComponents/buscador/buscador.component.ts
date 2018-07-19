@@ -4,6 +4,7 @@ import {MateriaService} from "../../../materiaService";
 import {InternalService} from "../../../internalService";
 import {Estudiante} from "../../../Estudiante";
 import {Router} from "@angular/router";
+import {SearchService} from "../../../Servicios/search.service";
 
 @Component({
   selector: 'app-buscador',
@@ -18,20 +19,20 @@ export class BuscadorComponent implements OnInit {
   constructor(private _estudianteService:EstudianteService,
               private _materiaService:MateriaService,
               private _internalService:InternalService,
-              private _router: Router) { }
+              private _router: Router,
+              private _searchService: SearchService) { }
 
   ngOnInit() {
   }
 
   efectuarConsulta(){
-    this._estudianteService.consultarEstudiantePorNombre(this.inputConsulta)
+    this._searchService.buscador(this.inputConsulta)
       .subscribe(
         res => {
           console.log('VEAMOS EL RESULTADO: ',res);
           this.resultadosBusqueda = res;
         }
       )
-
   }
 
   escogerEstudiante(estudiante: Estudiante) {

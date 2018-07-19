@@ -14,7 +14,9 @@ export class StatusCarritoComponent implements OnInit, OnChanges {
    numItems:number;
   constructor(private _router: Router,
               private _estudianteService: EstudianteService,
-              private _internalService: InternalService) { }
+              private _internalService: InternalService) {
+    this.numItems = 0;
+  }
 
 
 
